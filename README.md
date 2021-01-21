@@ -24,23 +24,27 @@ Postgresql 13.1
 投稿編集機能  
 投稿削除機能  
 
-## カタログ設計
+## カタログ設計・テーブル定義
 https://docs.google.com/spreadsheets/d/1L5IFdtJMzKekG42WCRQJ5YKxfZDxXSBOcUfzevUKWmU/edit?usp=sharing
 
-## テーブル定義
+## ER図
 
-### 画面遷移図
+## 画面遷移図
 
 ## 画面ワイヤーフレーム
 
 ## 使用予定Gem
 
-- device
-- Pay.jp
-- ancestry
+device
+Pay.jp
+ancestry
+ransack
+
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
-
+- aws
+- device
 * カリキュラム外から１つ以上の技術  
-
+- active_strage+S3(aws)
+- Pay.jp
