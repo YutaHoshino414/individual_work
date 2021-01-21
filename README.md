@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 簡単投稿 ＋決済
 
-Things you may want to cover:
 
-* Ruby version
+### 概要
+lorem ipsum
 
-* System dependencies
+### コンセプト
+lorem ipsum
 
-* Configuration
+### バージョン
 
-* Database creation
+### 機能一覧
 
-* Database initialization
+### カタログ設計
 
-* How to run the test suite
+### テーブル定義
 
-* Services (job queues, cache servers, search engines, etc.)
+### 画面遷移図
 
-* Deployment instructions
+### 画面ワイヤーフレーム
 
-* ...
+### 使用予定Gem
+
+- device
+- Pay.jp
+- ancestry
