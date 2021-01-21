@@ -37,3 +37,9 @@ Postgresql 13.1
 - device
 - Pay.jp
 - ancestry
+
+## 課題要件
+* 就業Termから２つ以上の技術  
+
+* カリキュラム外から１つ以上の技術  
+
