@@ -1,6 +1,6 @@
 # README
 
-## 簡単投稿 （＋決済）
+# (仮　簡単投稿 ＋決済）
 
 シンプルな投稿に、投稿したものを購入できる決済機能を設ける
 
@@ -35,16 +35,16 @@ https://docs.google.com/spreadsheets/d/1L5IFdtJMzKekG42WCRQJ5YKxfZDxXSBOcUfzevUK
 
 ## 使用予定Gem
 
-device
-Pay.jp
-ancestry
-ransack
+device  
+Pay.jp  
+ancestry  
+ransack  
 
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
-- aws
-- device
-* カリキュラム外から１つ以上の技術  
-- active_strage+S3(aws)
-- Pay.jp
+  * aws
+  * device
+- カリキュラム外から１つ以上の技術  
+  - active_strage+S3(aws)
+  - Pay.jp
