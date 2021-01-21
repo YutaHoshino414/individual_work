@@ -25,12 +25,13 @@ Postgresql 13.1
 投稿削除機能  
 
 ## カタログ設計
+https://docs.google.com/spreadsheets/d/1L5IFdtJMzKekG42WCRQJ5YKxfZDxXSBOcUfzevUKWmU/edit?usp=sharing
 
-### テーブル定義
+## テーブル定義
 
 ### 画面遷移図
 
-### 画面ワイヤーフレーム
+## 画面ワイヤーフレーム
 
 ## 使用予定Gem
 
