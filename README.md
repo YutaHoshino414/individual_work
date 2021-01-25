@@ -34,6 +34,7 @@ https://docs.google.com/spreadsheets/d/1L5IFdtJMzKekG42WCRQJ5YKxfZDxXSBOcUfzevUK
 ## ER図
 
 ## 画面遷移図
+https://docs.google.com/spreadsheets/d/1L5IFdtJMzKekG42WCRQJ5YKxfZDxXSBOcUfzevUKWmU/edit#gid=1848311508
 
 ## 画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKgChc/edit#gid=0
@@ -48,8 +49,12 @@ ransack
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
-  * aws
+  * AWS
   * device
+  * フォロワー機能  
+  
 - カリキュラム外から１つ以上の技術  
   - active_strage+S3(aws)
   - Pay.jp
+  - Ancestry
+  
