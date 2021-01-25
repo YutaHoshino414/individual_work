@@ -38,12 +38,16 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 
 ## 使用予定Gem
 
-device  
-Pay.jp  
-ancestry  
-ransack  
-kaminari  
-unicorn/capistrano  
+- device  
+- Pay.jp  
+- ancestry  
+- ransack  
+- kaminari  
+- unicorn/capistrano  
+
+（猶予があれば）  
+- omniauth  
+
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
