@@ -14,23 +14,21 @@ Rails 5.2.4
 Postgresql 13.1  
 
 ## 機能一覧  
-ログイン機能  
-ユーザー登録機能  
-商品CRUD機能
+1. ログイン機能  
+2. ユーザー登録機能  
+3. 商品CRUD機能
 - 商品一覧／新規／詳細／編集／削除  
 
-お気に入り機能  
-商品検索機能  
-ユーザープロフィール表示機能  
-ユーザープロフィール編集機能  
-follower機能 
-コメント機能  
-決済機能  
+4. お気に入り機能  
+5. 商品検索機能  
+6. ユーザープロフィール表示機能  
+7. ユーザープロフィール編集機能  
+8. follower機能 
+9. コメント機能  
+10. 決済機能  
 
-## カタログ設計・テーブル定義
+## カタログ設計・テーブル定義・ER図
 https://docs.google.com/spreadsheets/d/1L5IFdtJMzKekG42WCRQJ5YKxfZDxXSBOcUfzevUKWmU/edit?usp=sharing
-
-## ER図
 
 ## 画面遷移図
 https://docs.google.com/spreadsheets/d/1L5IFdtJMzKekG42WCRQJ5YKxfZDxXSBOcUfzevUKWmU/edit#gid=1848311508
