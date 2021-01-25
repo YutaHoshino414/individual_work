@@ -43,6 +43,9 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 - ancestry  
 - ransack  
 - kaminari  
+- bootstrap4  
+- jquery-rails
+- dotenv-rails
 - unicorn/capistrano  
 
 （猶予があれば）  
@@ -53,10 +56,10 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 * 就業Termから２つ以上の技術  
   * AWS
   * device
-  * フォロワー機能  
+    
   
 - カリキュラム外から１つ以上の技術  
-  - active_strage+S3(aws)
+  - Active_Strage+S3サーバ(AWS)
   - Pay.jp
   - Ancestry
-  
+  - ransack
