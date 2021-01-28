@@ -1,4 +1,4 @@
-## コーディネート投稿サービス「フクオタ (仮)」（＋決済機能）　
+## コーディネート投稿サービス「フクオタ (仮)」  
 
 ## 概要
 自分の好きなファッションコーディネートを投稿しよう。 自分のファッションアイテムを投稿し合い、また投稿アイテムを購入することができます。 「フクオタ」は服好きである開発者が、 自分の好きなものを通して他者と繋がれるサービスをと考え、開発したアプリケーションです。
@@ -40,6 +40,7 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 - Pay.jp  
 - ancestry  
 - ransack  
+- active_hash
 - kaminari  
 - bootstrap4  
 - jquery-rails
