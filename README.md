@@ -58,7 +58,4 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
     
   
 - カリキュラム外から１つ以上の技術  
-  - Active_Strage+S3サーバ(AWS)
-  - Pay.jp
   - Ancestry
-  - ransack
