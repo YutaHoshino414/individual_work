@@ -53,7 +53,7 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
-  * AWS
+  * follow/follower機能
   * device
     
   
