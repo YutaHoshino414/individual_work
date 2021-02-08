@@ -52,10 +52,10 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 - omniauth-google-oauth2  
 - gretel  
 
-## 使用予定（猶予があれば）技術  
-* 
-- Active_strage + S3 （または、herokuの場合:croudinary）
--
+## 使用予定技術（猶予があった際）  
+ 
+- Active_strage + S3 （または、herokuの場合:cloudinary）
+- zipcloud
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
