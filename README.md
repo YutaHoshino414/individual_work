@@ -48,8 +48,13 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 - unicorn/capistrano  
 
 （猶予があれば）  
-- omniauth  
+- omniauth 
+- omniauth-google-oauth2  
+- gretel  
 
+## 使用予定（猶予があれば）技術  
+-Active_strage + S3 （または、herokuの場合:croudinary）
+-
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
