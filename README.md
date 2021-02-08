@@ -53,7 +53,8 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 - gretel  
 
 ## 使用予定（猶予があれば）技術  
--Active_strage + S3 （または、herokuの場合:croudinary）
+* 
+- Active_strage + S3 （または、herokuの場合:croudinary）
 -
 
 ## 課題要件
