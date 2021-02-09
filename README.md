@@ -52,16 +52,16 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 - omniauth-google-oauth2  
 - gretel  
 
-## 使用予定技術（猶予があった際）  
- 
+## 使用予定技術  
+- Pay.jp（クレカ決済）  
+（猶予があった際） 
 - Active_strage + S3 （または、herokuの場合:cloudinary）
 - zipcloud
 
 ## 課題要件
 * 就業Termから２つ以上の技術  
-  * follow/follower機能
+  * フォロー/フォロワー機能
   * device
     
-  
 - カリキュラム外から１つ以上の技術  
   - Ancestry
