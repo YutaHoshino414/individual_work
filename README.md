@@ -54,7 +54,8 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 
 ## 使用予定技術  
 - Pay.jp（クレカ決済）  
-（猶予があった際） 
+
+（猶予があれば）  
 - Active_strage + S3 （または、herokuの場合:cloudinary）
 - zipcloud
 
@@ -64,4 +65,4 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
   * device
     
 - カリキュラム外から１つ以上の技術  
-  - Ancestry
+  - Ancestry（多階層カテゴリを設ける）
