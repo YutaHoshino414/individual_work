@@ -1,0 +1,14 @@
+<h1>Users#index</h1><br>
+
+<% @users.each do |user| %>
+  <div class="card w-75 mb-3">
+    <div class="card-body">
+        <i class="fas fa-user-circle"></i>
+          <span>　id: <%= user.id %>｜</span>
+          <%= link_to user_path(user.id) do %>
+            <%= user.username %>
+          <% end %>
+          <span>｜<%= user.email %></span>
+    </div>
+  </div>
+<% end %>

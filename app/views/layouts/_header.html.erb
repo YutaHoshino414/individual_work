@@ -1,6 +1,8 @@
-<div class="header">
+<div class="header" style="text-align:right;">
   <% if user_signed_in? %>
-      <%= link_to "ブログ投稿", blogs_path %>
+    <%= link_to user_path(current_user.id) do%>
+      <strong><i class="fas fa-home"></i><%= current_user.username %></strong>
+    <% end %><span>|</span>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>

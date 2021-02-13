@@ -1,0 +1,21 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+<table class="table w-75">
+<tbody>
+  <tr>
+    <th>ユーザーid</th>
+    <td><%= @user.id %></td>
+  </tr>
+   <tr>
+     <th>ユーザー名</th>
+     <td><%= @user.username %></td>
+   </tr>
+   <tr>
+     <th>メールアドレス</th>
+     <td><%= @user.email %></td>
+   </tr>
+   <tr></tr>
+ </tbody>
+</table>
+<%= link_to"編集", edit_user_path(@user.id), class:"btn btn-success" %><hr><br>
+<%= link_to"ユーザー一覧", users_path %>
