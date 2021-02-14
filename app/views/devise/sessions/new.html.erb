@@ -3,12 +3,12 @@
 <div class="form_area w-50 mx-auto">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.label :email %><br />
+    <strong><%= f.label :email %></strong><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
     </div>
   
     <div class="field">
-      <%= f.label :password %><br />
+    <strong><%= f.label :password %></strong><br />
       <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
     </div>
   

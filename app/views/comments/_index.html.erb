@@ -1,0 +1,24 @@
+<ul>
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <li>
+        <strong>　(<%= comment.user.username %>さん)　</strong>|<i class="far fa-clock"></i><%= comment.created_at.strftime('%Y-%m-%d') %><br>
+        <div class="balloon1-left">
+          <p>こんにちは。これは例です。</p>
+          <p><%= comment.content %></p>
+            <div style="float:right;">
+             <%= link_to edit_item_comment_path(item, comment), remote: true do %>
+               <i class="fas fa-edit"></i>｜
+             <% end %>
+             <%= link_to item_comment_path(comment.item_id, comment.id), method: :delete, remote: true,
+                                             data: { confirm: "本当に削除しますか?"} do %>
+               <i class="fas fa-trash-alt"></i>
+             <% end %>
+             </div>
+        </div>
+        <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
+        
+      </li>
+    <% end %>
+  <% end %>
+</ul>

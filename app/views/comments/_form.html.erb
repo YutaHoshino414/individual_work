@@ -1,0 +1,21 @@
+<%= form_with(model: [item, comment]) do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h4>
+      <ul>
+      <% comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field w-75">
+  <p style="background-color:#fff6de;">相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。</p>
+    <%= form.text_area :content,  placeholder: "コメントを入力...", class:"form-control" %>
+    <div class="actions">
+    <%= form.submit"コメントする", class:"btn btn-dark btn-block" %>
+    </div>
+  </div><i class="far fa-comment-dots" style="font-size:30px;"></i><i class="far fa-comments" style="font-size:30px;"></i>
+  
+<% end %>
