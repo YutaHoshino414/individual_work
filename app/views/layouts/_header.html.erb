@@ -1,12 +1,31 @@
-<div class="header" style="text-align:right;">
-  <% if user_signed_in? %>
-    <%= link_to user_path(current_user.id) do%>
-      <strong><i class="fas fa-home"></i><%= current_user.username %></strong>
-    <% end %><span>|</span>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<div class="header">
+  <%= image_tag 'Page-1.png', class:'icon' %>
+
+  <div style="width:700px;">
+    <div class="w-75 mx-auto" >
+      <%= form_with url: items_path, method: :get, local: true do |f| %>
+        <div class="mb-3 mt-2" style="display:flex;">
+          <%= f.text_field :name, placeholder: "検索..", class: "form-control" %>
+          <%= f.submit '検索', class: "btn btn-dark" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="log_in"><br>
+    <% if current_user.present? %>
+    <p>ようこそ、<%= current_user.username %>さん</p>
     <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
+      <p>こんにちは、ゲストさん！</p>
     <% end %>
-    <hr>
+
+    <% if user_signed_in? %>
+      <%= link_to user_path(current_user.id) do%>
+        <strong><i class="fas fa-home"></i><%= current_user.username %></strong>
+      <% end %><span>|</span>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "新規登録", new_user_registration_path %>
+        <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
+ </div>
 </div>

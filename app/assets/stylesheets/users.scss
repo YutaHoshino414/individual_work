@@ -1,3 +1,19 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image_default{
+  // position: fixed;
+  padding: 32px;
+  border-radius: 50%;
+  background-color:#aab1b9;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+}
+
+.fa-user-alt{
+  font-size: 80px;
+  text-align: center;
+  color:#fff;
+}

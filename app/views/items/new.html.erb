@@ -1,0 +1,27 @@
+<h2>新規投稿</h2>
+<div class="container">
+  <div class="w-75">
+    <%= form_with(model: @item, local: true) do |form| %>
+      <div class="mb-3 w-50">
+        <%= form.label :name %>
+        <%= form.text_field :name,  placeholder: "投稿アイテム名を入力..", class: "form-control" %>
+      </div>
+      <div class="mb-3 w-50">
+        <%= form.label :brand %>
+        <%= form.text_field :brand,  placeholder: "ブランド名を入力..", class: "form-control" %>
+      </div>
+      <div class="mb-3 w-25">
+        <%= form.label :price %>
+        <%= form.text_field :price,  placeholder: "価格を入力..", class: "form-control" %><span>円(税込)</span>
+      </div>
+      <div class="mb-3 w-50">
+        <%= form.label :content %>
+        <%= form.text_area :content, placeholder: "を入力してください..", class: "form-control" %>
+      </div>
+    
+      <br>
+        <%= form.submit '登録する', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
