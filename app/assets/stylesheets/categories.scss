@@ -1,0 +1,65 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*上段メニュー*/
+.gnav {
+  display: inline-block;
+  display: flex;
+  height: 2rem;
+  margin: 0 auto;
+  width: 750px;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+.gnav > li >a{/*親階層のみ幅を25%にする*/
+  border-bottom: 2px solid rgb(243, 152, 15);
+  font-weight: bold;
+}
+
+/*全てのリスト・リンク共通*/
+.gnav li {
+  list-style: none;
+  position: relative;
+  width: 220px;
+  font-size: 13px;
+}
+.gnav ul{
+  padding-inline-start: 0;
+}
+
+.gnav li a {
+  background: #fff;
+  border-right: 1px solid #eee;
+  color:  #001b34;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.gnav li:hover > a{
+  background-color:#ff9022;
+}
+/*子階層以降共通*/
+.gnav li li {
+  height: 0;
+  overflow: hidden;
+  // transition: .5s;
+}
+// .gnav li li a {
+   // border-top: 1px solid #eee;
+// }
+.gnav li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+}
+.gnav li ul li ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

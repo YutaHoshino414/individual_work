@@ -31,32 +31,33 @@
      
   </div>
   <div class="col-9"><br>
-    <div class="jumbotron bg-info">
-      <div class="row">
-        <div class="col-3">
-          <div class="image_default">
-          <i class="fas fa-user-alt"></i>
-           
+     <div class="jumbotron bg-info">
+       <div class="row">
+          <div class="col-3">
+            <div class="image_default">
+              <i class="fas fa-user-alt"></i>  
+            </div>
           </div>
-        </div>
-        <table class="table w-75">
-        <tbody>
-          <tr>
-            <th>ユーザーid</th>
-            <td><%= @user.id %></td>
-          </tr>
-           <tr>
-             <th>ユーザー名</th>
-             <td><%= @user.username %></td>
-           </tr>
-           <tr>
-             <th>メールアドレス</th>
-             <td><%= @user.email %></td>
-           </tr>
-           <tr></tr>
-         </tbody>
-        </table>
-        </div>
+          <div class="col-8">
+            <table class="table w-75">
+            <tbody>
+              <tr>
+                <th>ユーザーid</th>
+                <td><%= @user.id %></td>
+              </tr>
+               <tr>
+                 <th>ユーザー名</th>
+                 <td><%= @user.username %></td>
+               </tr>
+               <tr>
+                 <th>メールアドレス</th>
+                 <td><%= @user.email %></td>
+               </tr>
+               <tr></tr>
+             </tbody>
+            </table>
+         </div>
+      </div>
      </div><br><br><br><br><br><br>
       <h3>フォロー中のユーザー<i class="fas fa-users"></i></h3><br>
       <div class="row">

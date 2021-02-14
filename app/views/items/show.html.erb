@@ -19,6 +19,13 @@
                 <td><%= @item.brand %></td>
               </tr>
               <tr>
+                <th>商品カテゴリ</th>
+                <td><%= @item.category.parent.name %>>
+                  <%= link_to category_path(@item.category_id) do %>
+                    <%= @item.category.name %></td>
+                  <% end %>
+              </tr>
+              <tr>
                 <th>アイテム紹介</th>
                 <td><%= @item.content %></td>
               </tr>

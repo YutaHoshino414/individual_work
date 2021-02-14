@@ -1,0 +1,25 @@
+
+  <ul class="gnav">
+  <% @parents.each do |parent| %>
+    <li><%= link_to category_path(parent.id) do %>
+      <%= parent.name %>
+      <% end %>
+      <ul>
+      <% parent.children.each do |child| %>
+        <li><%= link_to category_path(child.id) do %>
+             <%= child.name %>
+           <% end %>
+          <ul>
+          <% child.children.each do |grandchild| %>
+            <li><%= link_to category_path(grandchild.id) do %>
+                 <%= grandchild.name %>
+               <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </li>
+    <% end %>
+</ul>

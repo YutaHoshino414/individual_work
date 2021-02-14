@@ -11,3 +11,98 @@
   border-color: rgb(156, 156, 156);
   
 }
+
+#menu-tittle{
+  width: 130px;
+  margin: 20px 0 0 0px;
+  padding: 8px 10px 5px 10px;
+  border-radius: 3px 3px 0 0;
+  background: #2f3842;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
+#sample{
+  position: relative;
+  z-index: 100;
+  width: 150px;
+  margin: 0 0 20px 0px;
+  padding: 10px 0;
+  border-top: 3px solid #2f3842;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 3px 3px 5px #aaa, -3px 3px 5px #aaa;
+  font-size: 14px;
+  background: #fff;
+  color:#333;
+  cursor: pointer;
+}
+#sample li{
+  list-style-type : none;
+  margin: 0;
+  padding: 0;
+  color:#333;
+}
+#sample li a{
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  color: #0e2236;
+  text-decoration: none;
+  line-height: 15px;
+}
+#sample > li:hover > a{
+  color:#e47911;
+  font-weight: bold;
+}
+#sample ul li a:hover{
+  color:#e47911;
+  text-decoration: underline;
+}
+#sample > li:hover > a:after{
+  display: block;
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 5px;
+  width: 0px;
+  height: 0px;
+  margin-top: -8px;
+  border: 8px solid transparent;
+  border-left-color: #aaa;
+}
+#sample ul {
+  display: none;
+  position: absolute;
+  top: -3px;
+  right: -200px;  //←＊メイン枠とサブ枠の隙間をここで調整
+  width: 200px;
+  height: 500px;
+  margin: 0;
+  // padding: 10px;
+  border-top: 3px solid #2f3842;
+  border-radius: 0 0 3px 0;
+  background: #fff;
+  box-shadow: 3px 3px 5px #aaa, 3px 0px 3px #ccc inset;
+  padding-inline-start: 0;
+}
+#sample li:hover >ul{
+  display: block;
+}
+#sample ul.big{
+  right: -500px;
+  width: 500px;
+}
+#sample ul.big li{
+  float: left;
+  width: 200px;
+}
+#sample ul h3{
+  padding: 5px 5px 5px 15px;
+  margin: 0;
+  color:#e47911;
+  font-size: 16px;
+  font-weight: normal;
+}
+#sample ul li a{
+  padding: 8px 15px;
+}

@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @parents = Category.all.where(ancestry: nil)
   end
 
   def new
@@ -38,7 +39,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :brand, :status, :delivery_from, :price, :content)
+    params.require(:item).permit(:name, :brand, :status, :delivery_from, :price, :content, :category_id)
   end
   def set_item
     @item = Item.find(params[:id])

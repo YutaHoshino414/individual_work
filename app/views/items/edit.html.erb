@@ -1,2 +1,27 @@
-<h1>Items#edit</h1>
-<p>Find me in app/views/items/edit.html.erb</p>
+<h3>投稿を編集する</h3><br>
+    <%= form_with(model: @item, local: true) do |f| %>  
+      <div class="w-50">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:"form-control" %>
+      </div><br>
+      <div class="w-50">
+        <%= f.label :brand %>
+        <%= f.text_field :brand, class:"form-control" %>
+      </div><br>
+      <div class="w-50">
+      <%= f.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' } %>
+      </div><br>
+      <div class="w-25">
+        <%= f.label :price %>
+        <%= f.text_field :price, class:"form-control" %>
+      </div><br>
+      <div class="w-50">
+        <%= f.label :content %>
+        <%= f.text_area :content, class:"form-control" %>
+      </div><br>
+     
+      
+      <%= f.submit "編集する", class: "btn btn-lg, btn-success" %>
+    <% end %><br><hr>
+
+  <%= link_to 'Myページに戻る', item_path(@item.id) %>
