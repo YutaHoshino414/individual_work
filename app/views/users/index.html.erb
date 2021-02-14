@@ -9,6 +9,7 @@
             <%= user.username %>
           <% end %>
           <span>｜<%= user.email %></span>
+          <span>｜　　　<%= render 'follow_form', user: user %></span>
     </div>
   </div>
 <% end %>

@@ -1,0 +1,25 @@
+// Place all the styles related to the relationships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.follow_form{
+  display: inline-block;
+}
+
+.follow_form input{
+  background-color: rgb(55, 140, 238);
+  color:#fff;
+  font-size: 12px;
+  padding:10px;
+  border-style: solid 1px;
+  border-color: rgb(55, 140, 238);
+}
+
+.follow_form button{
+  color: rgb(55, 140, 238);
+  background-color: #fff;
+  font-size: 12px;
+  padding:10px;
+  border-style: solid 1px;
+  border-color:rgb(55, 140, 238);
+}

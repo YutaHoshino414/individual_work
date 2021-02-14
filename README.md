@@ -53,7 +53,7 @@ https://docs.google.com/spreadsheets/d/1PgXZ6hOSO1C821nfnIec9rnZby0APlSHUbaVPbKg
 - gretel  
 
 ## 使用予定技術  
-- [Pay.jp:クレカ決済サービスAPI(BASE, Inc.)](https://pay.jp/)
+- [Pay.jp(BASE, Inc.):クレジットカード決済サービスAPI](https://pay.jp/)
 
 （猶予があれば）  
 - Active_strage + S3 （または、herokuの場合:cloudinary）
