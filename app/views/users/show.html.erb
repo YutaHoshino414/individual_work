@@ -57,22 +57,21 @@
          </tbody>
         </table>
         </div>
-     </div>
-     
-    <h3>フォロー中のユーザー<i class="fas fa-users"></i></h3><br>
-   
-      <div class="card w-50 mb-3">
+     </div><br><br><br><br><br><br>
+      <h3>フォロー中のユーザー<i class="fas fa-users"></i></h3><br>
+      <div class="row">
         <% @user.following.each do |user| %>
-          <div class="card-body">
-            id_<%= user.id %>|
-            <%= link_to user_path(user) do %>
-              <%= user.username %>
-            <% end %>
-            　　　<%= render 'follow_form', user: user %>
-          </div>
+        <div class="card w-50 mb-2">
+            <div class="card-body">
+              id_<%= user.id %>|
+              <%= link_to user_path(user) do %>
+                <%= user.username %>
+              <% end %>
+              　　　<%= render 'follow_form', user: user %>
+            </div>
+        </div>
         <% end %>
       </div>
-   
    </div>
   </div>
 </div>

@@ -1,0 +1,11 @@
+<% unless @item.user_id == current_user.id %>
+<% if @favorite.present? %>
+  <%= link_to favorite_path(id: @favorite.id), method: :delete do %>
+    <i class="fas fa-heart unlike-btn">解除する</i>
+  <% end %>
+<% else %>
+  <%= link_to favorites_path(item_id: @item.id), method: :post do %>
+    <i class="far fa-heart like-btn">いいねする</i>
+  <% end %>
+<% end %>
+<% end %>

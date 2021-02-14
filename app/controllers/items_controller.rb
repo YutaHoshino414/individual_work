@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -16,22 +17,30 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
-    
       @comments = @item.comments
       @comment = @item.comments.build
+      @favorite = current_user.favorites.find_by(item_id: @item.id)
   end
 
   def edit
-    @item = Item.find(params[:id])
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item.id), notice: "投稿を編集しました"
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @item = Item.find(params[:id])
   end
 
   private
   def item_params
     params.require(:item).permit(:name, :brand, :status, :delivery_from, :price, :content)
+  end
+  def set_item
+    @item = Item.find(params[:id])
   end
 end

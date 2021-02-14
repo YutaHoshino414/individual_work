@@ -34,10 +34,14 @@
                 <th>投稿者</th>
                 <td><%= @item.user.username %></td>
               </tr>
+              <tr>
+                <th>お気に入り</th>
+                <td><i class="fas fa-heart unlike-btn"></i><%= @item.favorites.count %></td>
+              </tr>
           </tbody>
         </table>
       </div>
-     
+      <%= render 'favorites/index' %>
       </div> 
       <button class= "btn btn-info btn-lg btn-block align-items-end">購入画面にすすむ</button>
     </div>

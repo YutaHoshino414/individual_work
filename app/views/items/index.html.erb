@@ -23,13 +23,13 @@
                 <div><i class="far fa-clock"></i>
                   <small><%= item.created_at.strftime('%Y/%m/%d') %>_by</small>
                   <span style="color:black;"><%= item.user.username %></span>
-                  <%= link_to item_path(item.id), method: :delete, data: {confirm: "本当に削除していいですか？"} do %>
-                    <i class="fas fa-trash-alt"></i>
-                  <% end %>
+                  
                 </div>
-                <i class="fas fa-heart unlike-btn"></i><span>　</span>
+                <i class="fas fa-heart unlike-btn"><%= item.favorites.count %></i><span>　</span>
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-               
+                <%= link_to item_path(item.id), method: :delete, data: {confirm: "本当に削除していいですか？"} do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
                 </div>
           </div>
           
