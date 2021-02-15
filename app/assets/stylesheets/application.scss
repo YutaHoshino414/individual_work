@@ -20,10 +20,32 @@
   background-color: rgb(247, 247, 247);
 }
 
+.container{
+  min-height: 100vh;
+}
+
 p, ol, th, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li>a {          
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+  background-color: rgb(247, 247, 247);
+}
+
+.pagination>.active>a {     
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 70%;     /*角を丸くする*/
+}
+.page-item.active .page-link{
+  background: #ffb26a;
 }
 
 .header{
@@ -40,4 +62,21 @@ p, ol, th, td {
   margin: 5px;
   margin-left: 8%;
   margin-right: 5%;
+}
+
+.footer{
+  background-color: rgb(41, 41, 41);
+  
+}
+
+.footer p{
+  color: #fff;
+  margin:0;
+  text-align: center;
+}
+
+.fa-cc-stripe{
+  color: rgb(84, 50, 231);
+  font-size: 40px;
+  text-align: center;
 }

@@ -1,11 +1,21 @@
+<%= paginate @items %><br>
 <div class="row">
   <div class="col-3"><br>
-    <%= render 'categories/menu2' %><hr>
-    <%= link_to"新規投稿", new_item_path %><br><br><br>
+    <%= render 'categories/menu2' %>
+
+     <div class="new_blog">
+        <%= link_to new_item_path do %>
+        <div class="submit">
+          <p>POST</p>
+        <i class="fas fa-camera"></i>
+        <% end %>
+        </div>
+     </div>
   </div>
 
   <div class="col-9">  
     <h4>みんなの投稿</h4><br>
+  
     <div class="row row-cols-2 row-cols-md-3 g-4">
       <% @items.each do |item| %>
         <div class="col mb-3">
