@@ -47,3 +47,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 # カテゴリ設定
 gem 'ancestry'
+# 検索
+gem 'ransack'

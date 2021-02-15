@@ -1,12 +1,13 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-<%= form_with(model: @user, local: true) do |f| %>  
-  <%= f.label :username %>
-  <%= f.text_field :username %><br><br>
-  <%= f.label :email %>
-  <%= f.email_field :email %><br><br>
-  
-  <%= f.submit "編集する", class: "btn btn-lg, btn-primary" %>
-<% end %><br><hr>
+<h1>ユーザー編集</h1>
 
+<div class="w-50">
+  <%= form_with(model: @user, local: true) do |f| %>  
+    <%= f.label :username,'ユーザー名' %>
+    <%= f.text_field :username, class: "form-control" %><br>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %><br>
+    
+    <%= f.submit "編集する", class: "btn btn-lg, btn-success" %>
+  <% end %><br>
+</div><hr>
 <%= link_to 'Myページに戻る', user_path(@user.id) %>

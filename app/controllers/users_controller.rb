@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:index, :search]
 
   def index
     @users = User.all
@@ -23,8 +24,18 @@ class UsersController < ApplicationController
 
   def destroy 
   end
+  
+  def search
+    @results = @q.result
+  end
+  
 
   private
+  
+  def set_q
+    @q = User.ransack(params[:q])
+  end
+  # binding.pry
   def set_user
     @user = User.find(params[:id])
   end

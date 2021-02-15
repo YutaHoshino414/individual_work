@@ -1,0 +1,25 @@
+<h1 style="text-align:center;">検索結果</h1><br>
+<div class="row">
+  <div class="col-4">
+  </div>
+  <div class="col-8">
+    <% @results.each do |user| %>
+      <div class="card mb-3">
+        <div class="card-body">
+            <i class="fas fa-user-circle"></i>
+              <span>　id: <%= user.id %>｜</span>
+              <%= link_to user_path(user.id) do %>
+                <%= user.username %>
+              <% end %>
+              <span>｜<%= user.email %></span>
+              <span>｜フォロワー:<%= user.followers.count %></span>
+              <div class="float-right">
+                <%= render 'follow_form', user: user %>
+              </div>
+              
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to '戻る', users_path %>

@@ -1,15 +1,36 @@
-<h1>Users#index</h1><br>
+<h1>ユーザー一覧</h1><br>
+<div class="row">
+  <div class="col-3">
+    <h5>ユーザー検索</h5>
+    <%= search_form_for @q, url: search_users_path do |f| %>
 
-<% @users.each do |user| %>
-  <div class="card w-75 mb-3">
-    <div class="card-body">
-        <i class="fas fa-user-circle"></i>
-          <span>　id: <%= user.id %>｜</span>
-          <%= link_to user_path(user.id) do %>
-            <%= user.username %>
-          <% end %>
-          <span>｜<%= user.email %></span>
-          <span>｜　　　<%= render 'follow_form', user: user %></span>
+    <div class="mb-3 mt-2" style="display:flex;"> 
+      <%= f.search_field :username_cont, placeholder: "ユーザー名..",class: "form-control" %>
+      <%= f.submit '検索', class: "btn btn-dark" %>
     </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="col-9">
+    <% @users.each do |user| %>
+      <div class="card mb-3">
+        <div class="card-body">
+            <i class="fas fa-user-circle"></i>
+              <span>　id: <%= user.id %>｜</span>
+              <%= link_to user_path(user.id) do %>
+                <%= user.username %>
+              <% end %>
+              <span>｜<%= user.email %></span>
+              <span>｜<i class="fas fa-users"></i>フォロワー:
+                <%= user.followers.count %></span>
+              
+              <div class="float-right">
+                <%= render 'follow_form', user: user %>
+              </div>
+              
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+</div>
