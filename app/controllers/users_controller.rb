@@ -35,12 +35,13 @@ class UsersController < ApplicationController
   def set_q
     @q = User.ransack(params[:q])
   end
-  # binding.pry
+  
   def set_user
     @user = User.find(params[:id])
+  #  binding.pry
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end

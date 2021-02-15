@@ -1,0 +1,30 @@
+    <div class=""> 
+     <table class="table table-light table-striped">
+        <tbody>
+          <tr>
+            <th>苗字</th>
+            <td> <%= @user.profile.last_name %></td>
+          </tr>
+          <tr>
+            <th>名前</th>
+            <td> <%= @user.profile.first_name %></td>
+          </tr>
+          <tr>
+            <th>誕生日</th>
+            <td> <%= @user.profile.birthday %></td>
+          </tr>
+          <tr>
+            <th>性別</th>
+            <td> <%= @user.profile.sex %></td>
+          </tr>
+          <tr>
+            <th>身長</th>
+            <td> <%= @user.profile.body_length %></td>
+          </tr>
+          <tr>
+            <th>自己紹介</th>
+            <td> <%= @user.profile.introduction %></td>
+          </tr>
+        </tbody>
+     </table>
+    </div>

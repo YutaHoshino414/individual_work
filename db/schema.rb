@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_150225) do
+ActiveRecord::Schema.define(version: 2021_02_15_171733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,22 @@ ActiveRecord::Schema.define(version: 2021_02_14_150225) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "username", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "first_name_kana", default: "", null: false
+    t.string "last_name_kana", default: "", null: false
+    t.date "birthday"
+    t.integer "sex", default: 0, null: false
+    t.integer "body_length", default: 0, null: false
+    t.text "introduction"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
@@ -70,7 +86,6 @@ ActiveRecord::Schema.define(version: 2021_02_14_150225) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "username", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -81,4 +96,5 @@ ActiveRecord::Schema.define(version: 2021_02_14_150225) do
   add_foreign_key "comments", "users"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
+  add_foreign_key "profiles", "users"
 end

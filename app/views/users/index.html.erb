@@ -5,7 +5,7 @@
     <%= search_form_for @q, url: search_users_path do |f| %>
 
     <div class="mb-3 mt-2" style="display:flex;"> 
-      <%= f.search_field :username_cont, placeholder: "ユーザー名..",class: "form-control" %>
+      <%= f.search_field :email_cont, placeholder: "ユーザー名..",class: "form-control" %>
       <%= f.submit '検索', class: "btn btn-dark" %>
     </div>
     <% end %>
@@ -18,7 +18,7 @@
             <i class="fas fa-user-circle"></i>
               <span>　id: <%= user.id %>｜</span>
               <%= link_to user_path(user.id) do %>
-                <%= user.username %>
+                <%= user.profile.username %>
               <% end %>
               <span>｜<%= user.email %></span>
               <span>｜<i class="fas fa-users"></i>フォロワー:

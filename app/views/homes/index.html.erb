@@ -1,2 +1,22 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <title>Fukuota</title>
+</head>
+<body>
+<div class="full">
+<%= image_tag '322207.jpg', class:"full" %>
+<div class="top_page">
+  <h1>Fukuota </h1><br>
+  <%= link_to "新規登録", new_user_registration_path %><br>
+  <%= link_to "ログイン", new_user_session_path %><br><br>
+  <button class="btn btn-warning" >ゲストログイン（閲覧用）</button>
+</div>
+</div>
+</body>
+</html>

@@ -15,14 +15,14 @@
   </div>
   <div class="log_in"><br>
     <% if current_user.present? %>
-    <p>ようこそ、<%= current_user.username %>さん</p>
+    <p>ようこそ、<%= current_user.email %>さん</p>
     <% else %>
       <p>こんにちは、ゲストさん！</p>
     <% end %>
 
     <% if user_signed_in? %>
       <%= link_to user_path(current_user.id) do%>
-        <strong><i class="fas fa-home"></i><%= current_user.username %></strong>
+        <strong><i class="fas fa-home"></i><%= current_user.email %></strong>
       <% end %><span>|</span>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>

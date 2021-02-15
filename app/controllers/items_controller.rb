@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.page(params[:page]).per(2)
+    @items = Item.all.page(params[:page]).per(5)
     @parents = Category.all.where(ancestry: nil)
   end
 
@@ -35,6 +35,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item.destroy
+    redirect_to items_path, notice: "投稿を削除しました"
   end
 
   private

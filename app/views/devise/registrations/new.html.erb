@@ -5,11 +5,6 @@
     <%= render "devise/shared/error_messages", resource: resource %>
   
     <div class="field">
-      <strong><%= f.label :username, 'ユーザー名' %></strong><br />
-      <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"form-control" %>
-    </div>
-  
-    <div class="field">
       <strong><%= f.label :email %></strong><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
     </div>
@@ -26,7 +21,14 @@
       <strong><%= f.label :password_confirmation %></strong><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
     </div><br>
-  
+     
+      <%= f.fields_for :profile do |f| %>
+        <div class="field">
+          <strong><%= f.label :username, 'ユーザー名' %></strong><br />
+          <%= f.text_field :username, class:"form-control" %>
+        </div>
+      <% end %><br>
+
     <div class="actions">
       <%= f.submit t('.sign_up'), class:"btn btn-primary" %>
     </div>

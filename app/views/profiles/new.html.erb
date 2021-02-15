@@ -1,0 +1,29 @@
+<h1>Profiles#new</h1>
+<p>Find me in app/views/profiles/new.html.erb</p>
+<div class="w-75">
+<%= form_with(model: @profile, local: true) do |form| %>
+  <div class="mb-3 w-50">
+    <%= form.label :username %>
+    <%= form.text_field :username,  placeholder: "ユーザー名を入力..", class: "form-control" %>
+  </div>
+  <div class="mb-3 w-50">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name,  placeholder: "を入力..", class: "form-control" %>
+  </div>
+  <div class="mb-3 w-50">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name,  placeholder: "を入力..", class: "form-control" %>
+  </div>
+  <div class="mb-3 w-50">
+    <%= form.label :birthday %>
+    <%= form.date_field :birthday,  placeholder: "を入力..", class: "form-control" %>
+  </div>
+  <div class="mb-3 w-50">
+    <%= form.label :introduction %>
+    <%= form.text_area :introduction, placeholder: "を入力してください..", class: "form-control" %>
+  </div>
+
+  <br>
+    <%= form.submit '登録する', class: "btn btn-primary" %>
+<% end %>
+</div>

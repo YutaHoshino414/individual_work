@@ -27,7 +27,7 @@
               <p class="card-text"><small><%= item.name %></small></p>
                 <div><i class="far fa-clock"></i>
                   <small><%= item.created_at.strftime('%Y/%m/%d') %>_by</small>
-                  <span style="color:black;"><%= item.user.username %></span>
+                  <span style="color:black;"><%= item.user.profile.username %></span>
                   
                 </div>
                 <i class="fas fa-heart unlike-btn"><%= item.favorites.count %></i><span>　</span>
