@@ -11,12 +11,16 @@
 <body>
 <div class="full">
 <%= image_tag '322207.jpg', class:"full" %>
-<div class="top_page">
-  <h1>Fukuota </h1><br>
-  <%= link_to "新規登録", new_user_registration_path %><br>
-  <%= link_to "ログイン", new_user_session_path %><br><br>
-  <button class="btn btn-warning" >ゲストログイン（閲覧用）</button>
-</div>
+  <div class="top_page">
+    <div class="top_title">
+    <p>WELCOME </p>
+    <p>Fukuota </p>
+      <div>
+        <%= link_to "新規登録", new_user_registration_path %><br>
+        <%= link_to "ログイン", new_user_session_path %><br><br>
+        <button class="btn btn-warning" >ゲストログイン（閲覧用）</button>
+      </div>
+  </div>
 </div>
 </body>
 </html>

@@ -22,7 +22,7 @@
 
     <% if user_signed_in? %>
       <%= link_to user_path(current_user.id) do%>
-        <strong><i class="fas fa-home"></i><%= current_user.email %></strong>
+        <strong><i class="fas fa-home"></i>マイページ</strong>
       <% end %><span>|</span>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>

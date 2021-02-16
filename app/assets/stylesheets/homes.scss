@@ -16,21 +16,26 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // font-size: 65px;
-  border: 1px solid;
-  padding: 60px;
-  font-family: serif;
-  background-color:#fdfdfdef;
+  border: 1px solid #979797;
+  background-color:#fdfdfda6;
   // transition: background 0.3s;
   cursor: pointer;
 }
 
-.top_page h1{
+.top_page p{
   font-size: 65px;
   color:rgb(90, 90, 90);
+  font-family: serif;
+  padding:10px;
 }
 
-p:hover{
-  background-color:#fdfdfd86;
+.top_page> :hover{
+   background-color:#fdfdfdc0;
   /* filter:saturate(0); */
+  background-position:0 0;
+}
+
+.top_title{
+  padding: 60px;
+  width: 600px;
 }
