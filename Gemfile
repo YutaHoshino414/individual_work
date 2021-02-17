@@ -49,3 +49,5 @@ gem 'kaminari'
 gem 'ancestry'
 # 検索
 gem 'ransack'
+# 決済
+gem 'payjp'

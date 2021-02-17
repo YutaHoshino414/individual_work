@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase, :pay]
 
   def index
     @items = Item.all.page(params[:page]).per(5)
@@ -37,6 +37,19 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to items_path, notice: "投稿を削除しました"
+  end
+
+  def purchase
+  end
+
+  def pay
+    Payjp.api_key = "sk_test_c50831c684c20a48dd29ef03"
+    Payjp::Charge.create(
+      :amount => @item.price,
+      :card => params['payjp-token'],
+      :currency => 'jpy'
+    )
+    
   end
 
   private

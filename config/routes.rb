@@ -17,6 +17,11 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :comments
+    member do 
+      get :purchase
+      get :pay
+      patch :pay
+    end
   end
   resources :categories, only: [:show]
   resources :favorites, only: [:create, :destroy]
