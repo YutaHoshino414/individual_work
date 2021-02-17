@@ -12,10 +12,10 @@
           <%= f.radio_button :profile_sex_eq, 2 %>男性
           <br><br>
           <%= f.label :body_length,"身長" %>:<br>
-          <%= f.number_field :profile_body_length_gteq %>以上〜
-          <%= f.number_field :profile_body_length_lt %>未満
+          <%= f.number_field :profile_body_length_gteq %>cm以上〜<br><br>
+          <%= f.number_field :profile_body_length_lt %>cm未満
           
-          <br><br><br>
+          <br><br><br><hr>
           <%= f.submit '検索', class: "btn btn-dark btn-block" %>
         </div>
         <% end %>

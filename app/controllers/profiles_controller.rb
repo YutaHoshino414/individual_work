@@ -13,12 +13,14 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       redirect_to user_path(@profile.user_id), notice: "プロフィールを編集しました！"
+     
     # binding.pry
     else
       render :edit
@@ -26,6 +28,8 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:username, :first_name, :last_name, :birthday, :sex, :body_lengh, :introduction, :user_id)
+    params.require(:profile).permit(:username, :first_name, :last_name, :birthday, :sex, :body_length, :introduction, :user_id)
   end
+
+
 end
