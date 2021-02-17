@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase, :pay]
 
   def index
-    @items = Item.all.page(params[:page]).per(5)
+    @items = Item.all.order(created_at: :desc).page(params[:page]).per(10)
     @parents = Category.all.where(ancestry: nil)
   end
 
@@ -49,7 +49,8 @@ class ItemsController < ApplicationController
       :card => params['payjp-token'],
       :currency => 'jpy'
     )
-    
+    @item.update(buyer_id: current_user.id)
+    # binding.pry
   end
 
   private

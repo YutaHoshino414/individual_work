@@ -7,6 +7,7 @@
           <p>こんにちは。これは例です。</p>
           <p><%= comment.content %></p>
             <div style="float:right;">
+            <% if comment.user_id == current_user.id %>
              <%= link_to edit_item_comment_path(item, comment), remote: true do %>
                <i class="fas fa-edit"></i>｜
              <% end %>
@@ -14,6 +15,7 @@
                                              data: { confirm: "本当に削除しますか?"} do %>
                <i class="fas fa-trash-alt"></i>
              <% end %>
+            <% end %>
              </div>
         </div>
         <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>

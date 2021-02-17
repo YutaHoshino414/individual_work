@@ -3,16 +3,22 @@
     <%= image_tag 'Page-1.png', class:'icon' %>
   <% end %>
   <div>
-    <div class="w-75 mx-auto" >
-      <%= form_with url: items_path, method: :get, local: true do |f| %>
-        <div class="mb-3 mt-2" style="display:flex;">
-          <%= f.text_field :name, placeholder: "検索..", class: "form-control" %>
-          <%= f.submit '検索', class: "btn btn-dark" %>
-        </div>
-      <% end %>
-    </div>
+    <fieldset disabled>
+      <div class="w-75 mx-auto" >
+        <%= form_with url: items_path, method: :get, local: true do |f| %>
+          <div class="input-group mb-3 mt-2" style="display:flex;">
+            <%= f.text_field :name, placeholder: "無効..", class: "form-control" %>
+           <div class="input-group-append">
+            <%= f.button :type => "submit", class: 'btn btn-dark' do %>
+              <i class="fas fa-search"></i>
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+    </fieldset>
     <%= render 'categories/menu' %>
   </div>
+
   <div class="log_in"><br>
     <% if current_user.present? %>
     <p>ようこそ、<%= current_user.email %>さん</p>

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'bought_record'
+    end
   end
 
   resources :relationships, only: [:create, :destroy]

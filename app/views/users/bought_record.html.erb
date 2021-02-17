@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-3">
+    <%= render 'users/sidemenu' %>
+  </div>
+  <div class="col-9">
+    <h3>購入済みアイテム</h3><br>
+    <% @bought_items.each do |item| %>
+      <div class="card w-50 mb-2" style="background-color:#f8c983;">
+        <div class="card-body">
+          <%= item.name %>
+          <%= item.brand %>
+          <%= item.price %>円|
+          <%= item.user.profile.username %>
+        </div>
+       </div><br><br>
+    <% end %>
+  </div>
+</div>

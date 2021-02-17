@@ -4,10 +4,13 @@ class UsersController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    @users = User.all
+    # @users = User.all
+    @results = @q.result
   end
 
   def show
+    @bought_items = Item.all.where(buyer_id: current_user.id)
+
   end
 
   def edit
@@ -24,14 +27,17 @@ class UsersController < ApplicationController
 
   def destroy 
   end
+
+  def bought_record
+    @user = User.find(params[:id])
+    @bought_items = Item.all.where(buyer_id: current_user.id)
+  end
   
   def search
     @results = @q.result
   end
-  
 
   private
-  
   def set_q
     @q = User.ransack(params[:q])
   end

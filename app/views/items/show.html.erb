@@ -1,7 +1,6 @@
 <h2>アイテム詳細</h2><br>
 <div class="row">
   <div class="col-2">
-    <%= link_to '編集', edit_item_path(@item),class:"btn btn-success" %>
     <%= link_to "投稿一覧", items_path %>
   </div>
   <div class="col-9">
@@ -43,15 +42,26 @@
               </tr>
               <tr>
                 <th>お気に入り</th>
-                <td><i class="fas fa-heart unlike-btn"></i><%= @item.favorites.count %></td>
+                <td><i class="fas fa-heart unlike-btn"><%= @item.favorites.count %></i>
+                　　　<%= render 'favorites/index' %>
+                </td>
               </tr>
           </tbody>
         </table>
+        <% if @item.user_id == current_user.id %>
+        <%= link_to '編集する', edit_item_path(@item),class:"btn btn-outline-success" %>
+        <% end %>
       </div>
-      <%= render 'favorites/index' %>
-      </div> 
-      <%= link_to "購入画面にすすむ", purchase_item_path(@item), class: "btn btn-info btn-lg btn-block align-items-end" %>
-    </div>
+    </div> 
+   
+      <% if @item.buyer_id.present? %>
+        <button class="btn btn-secondary btn-lg btn-block align-items-end">SOLD OUT</button>
+      <% elsif @item.user_id == current_user.id %>
+      <button class="btn btn-primary btn-lg disabled btn-block align-items-end">投稿中アイテム</button>
+      <% else%>
+        <%= link_to "購入画面にすすむ", purchase_item_path(@item), class: "btn btn-info btn-lg btn-block align-items-end" %>
+      <% end %>
+      </div>
 </div> <hr>
 <div class="row">
   <div class="col-2">
