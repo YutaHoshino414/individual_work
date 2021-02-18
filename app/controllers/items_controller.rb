@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         format.js { render :create }
-        @items = Item.all
+        @items = Item.all.order(created_at: :desc).page(params[:page]).per(10)
         format.html { redirect_to @item, notice: "投稿を作成しました！"}
       else
           format.html { render :new, notice: "投稿が失敗しました"}

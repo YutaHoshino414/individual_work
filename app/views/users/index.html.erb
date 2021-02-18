@@ -31,9 +31,15 @@
               <%= link_to user_path(user.id) do %>
                 <%= user.profile.username %>
               <% end %>
-              <span>｜<%= user.email %></span>
-              <span>｜<i class="fas fa-users"></i>フォロワー:
-                <%= user.followers.count %></span>
+              <span>｜性別:<%= user.profile.sex %></span>
+              <span>｜身長:<%= user.profile.body_length %></span>
+              <span>｜<i class="fas fa-users"></i>
+                <%= user.followers.count %>
+              </span>
+              <span>｜<i class="fas fa-camera-retro"></i>
+                <%= user.items.count %>
+              </span>
+             
               <% if user.id != current_user.id %> 
               <div class="float-right">
                 <%= render 'follow_form', user: user %>

@@ -1,17 +1,32 @@
 <h2 style="text-align:center">投稿一覧</h2>
 <div class="row">
   <div class="col-3">
-
-  <div class="list-group w-75">
-    <span class="list-group-item bg-secondary"><i class="fas fa-list-ol"></i>人気投稿</span>
-    <span class="list-group-item"><%= @trend_categories_name[0][0] %>
-      <div class="badge badge-dark" >
-        <%= @trend_categories_name[0][1] %>
+  <div class="list-group">
+    <span class="list-group-item bg-secondary"><strong style="color:#fff">人気の投稿　</strong><i class="fas fa-list-ol float-right"></i></span>
+    <span class="list-group-item"><small><%= @trend_categories_name[0][0] %></small>
+      <div class="badge badge-info float-right" >
+        　<%= @trend_categories_name[0][1] %>
       </div></span>
-    <span class="list-group-item">Search</span>
-    <span class="list-group-item">Search</span>
-    <span class="list-group-item">Search</span>
-    <span class="list-group-item">Search</span>
+    <span class="list-group-item"><small><%= @trend_categories_name[1][0] %></small>
+      <div class="badge badge-warning float-right" >
+        　<%= @trend_categories_name[1][1] %>
+      </div>
+    </span>
+    <span class="list-group-item"><small><%= @trend_categories_name[2][0] %></small>
+      <div class="badge badge-danger float-right" >
+        　<%= @trend_categories_name[2][1] %>
+      </div>
+    </span>
+    <span class="list-group-item"><small><%= @trend_categories_name[3][0] %></small>
+      <div class="badge badge-dark float-right" >
+        　<%= @trend_categories_name[3][1] %>
+      </div>
+    </span>
+    <span class="list-group-item"><small><%= @trend_categories_name[4][0] %></small>
+      <div class="badge badge-dark float-right" >
+        　<%= @trend_categories_name[4][1] %>
+      </div>
+    </span>
   </div><br><br><br>
 
     <%= render 'categories/menu2' %>

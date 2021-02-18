@@ -6,13 +6,16 @@
     <h3>購入済みアイテム</h3><br>
     <% @bought_items.each do |item| %>
       <div class="card w-50 mb-2" style="background-color:#f8c983;">
-        <div class="card-body">
-          <%= item.name %>
-          <%= item.brand %>
-          <%= item.price %>円|
-          <%= item.user.profile.username %>
+        <div class="row" style="margin:0;">
+        <%= image_tag 'item_default.png', class:"record" %>
+          <div class="col">
+            <small><%= item.name %></small><br>
+            <small><%= item.brand %></small><br>
+            <small><%= item.price %>円|</small><br>
+            <small><%= item.user.profile.username %>
+          </div>
         </div>
-       </div><br><br>
+       </div>
     <% end %>
   </div>
 </div>
