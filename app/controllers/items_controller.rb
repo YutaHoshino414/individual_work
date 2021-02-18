@@ -4,6 +4,9 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order(created_at: :desc).page(params[:page]).per(10)
     @parents = Category.all.where(ancestry: nil)
+    @item = Item.new
+   @trend_categories_name = Item.joins(:category).group("categories.name").order('count_all DESC').limit(5).count.to_a
+  # binding.pry
   end
 
   def new
@@ -13,8 +16,15 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
-    @item.save
-    redirect_to item_path(@item), notice: "投稿を作成しました！"
+    respond_to do |format|
+      if @item.save
+        format.js { render :create }
+        @items = Item.all
+        format.html { redirect_to @item, notice: "投稿を作成しました！"}
+      else
+          format.html { render :new, notice: "投稿が失敗しました"}
+      end
+    end
   end
 
   def show

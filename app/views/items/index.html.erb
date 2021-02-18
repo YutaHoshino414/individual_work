@@ -1,45 +1,46 @@
-<%= paginate @items %><br>
+<h2 style="text-align:center">投稿一覧</h2>
 <div class="row">
-  <div class="col-3"><br>
-    <%= render 'categories/menu2' %>
+  <div class="col-3">
 
-     <div class="new_blog">
-        <%= link_to new_item_path do %>
-        <div class="submit">
-          <p>POST</p>
-        <i class="fas fa-camera"></i>
-        <% end %>
-        </div>
-     </div>
+  <div class="list-group w-75">
+    <span class="list-group-item bg-secondary"><i class="fas fa-list-ol"></i>人気投稿</span>
+    <span class="list-group-item"><%= @trend_categories_name[0][0] %>
+      <div class="badge badge-dark" >
+        <%= @trend_categories_name[0][1] %>
+      </div></span>
+    <span class="list-group-item">Search</span>
+    <span class="list-group-item">Search</span>
+    <span class="list-group-item">Search</span>
+    <span class="list-group-item">Search</span>
+  </div><br><br><br>
+
+    <%= render 'categories/menu2' %>
+    <%= render 'items/new' %>
+    
   </div>
 
   <div class="col-9">  
-    <h4>みんなの投稿</h4><br>
-  
-    <div class="row row-cols-2 row-cols-md-3 g-4">
-      <% @items.each do |item| %>
-        <div class="col mb-3">
-          <div class="card h-100 shadow">
-          <%= link_to item_path(item.id) do%>
-            <%= image_tag 'item_default.png' %>
-            <% end %>
-              <div class="card-footer" style="padding:0;">
-              <p class="card-text"><small><%= item.name %></small></p>
-                <div><i class="far fa-clock"></i>
-                  <small><%= item.created_at.strftime('%Y/%m/%d') %>_by</small>
-                  <span style="color:black;"><%= item.user.profile.username %></span>
-                  
-                </div>
-                <i class="fas fa-heart unlike-btn"><%= item.favorites.count %></i><span>　</span>
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                <%= link_to item_path(item.id), method: :delete, data: {confirm: "本当に削除していいですか？"} do %>
-                  <i class="fas fa-trash-alt"></i>
-                <% end %>
-                </div>
+  <div class="card">
+    <div class="card-body search_box">
+      <h5><strong>投稿検索</strong></h5>
+      
+      <div class="w-50" >
+        <%= form_with url: items_path, method: :get, local: true do |f| %>
+          <div class="mb-3 mt-2">
+            <%= f.text_field :name, placeholder: "アイテム名..", class: "form-control" %>
+            <%= f.text_field :brand, placeholder: "ブランド..", class: "form-control" %>
+            <%= f.button :type => "submit", class: 'btn btn-dark' do %>
+              <i class="fas fa-search">検索</i>
+              <% end %>
           </div>
-          
-        </div>
-      <% end %>
+        <% end %>
       </div>
+    </div>
+  </div>
+  <br><br><br><br><%= paginate @items %>
+    <br>
+      <div class="index">
+      <%= render 'items', items: @items %>
+    </div>
   </div>
 </div>

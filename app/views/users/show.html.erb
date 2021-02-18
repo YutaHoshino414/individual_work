@@ -48,7 +48,7 @@
      <div class="row">
        <% @user.following.each do |user| %>
        <div class="card w-50 mb-2">
-           <div class="card-body">
+           <div class="card-body border-bot">
              <%= link_to user_path(user) do %>
                <%= user.profile.username %>
              <% end %>

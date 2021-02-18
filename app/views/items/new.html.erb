@@ -11,7 +11,7 @@
         <%= form.text_field :brand,  placeholder: "ブランド名を入力..", class: "form-control" %>
       </div>
       <div class="field">
-      <%= form.label :category,'カテゴリ選択（要修正箇所）' %><br>
+      <%= form.label :category,'カテゴリ選択（*要修正箇所）' %><br>
       <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' } %>
       </div><br>
 

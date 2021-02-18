@@ -1,0 +1,17 @@
+<div class="card w-75 mx-auto">
+  <div class="card-body search_box">
+    <h5><strong>投稿検索</strong></h5>
+    
+    <div class="w-50 " >
+      <%= form_with url: items_path, method: :get, local: true do |f| %>
+        <div class="mb-3 mt-2">
+          <%= f.text_field :name, placeholder: "アイテム名..", class: "form-control" %>
+          <%= f.text_field :brand, placeholder: "ブランド..", class: "form-control" %>
+          <%= f.button :type => "submit", class: 'btn btn-dark' do %>
+            <i class="fas fa-search">検索</i>
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div><br>
