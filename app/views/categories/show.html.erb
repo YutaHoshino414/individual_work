@@ -1,1 +1,18 @@
-<h2>Categories_<%= @category.id %><%= @category.name %>のページ</h2>
+<h2>Categories_<%= @category.id %><%= @category.name %>の一覧</h2><br>
+<div class="row">
+  <% @category.items.each do |item| %>
+  <div class="col-sm-3 mb-5">
+    <div class="card shadow h-100" id="<%= item.id %>">
+        <%= link_to item_path(item.id) do%>
+          <%= image_tag 'item_default.png' %>
+        <% end %>
+      <div class="card-footer border-below">
+        <small><p><%= item.name %></p></small>
+        <i class="far fa-clock"></i>
+        <small><%= item.created_at.strftime('%Y/%m/%d') %>:_</small><%= item.user.profile.username %><br>
+        <i class="fas fa-heart unlike-btn"><small><%= item.favorites.count %></small></i>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

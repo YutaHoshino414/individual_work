@@ -1,18 +1,29 @@
-<h2 style="text-align:center">投稿一覧</h2>
 <div class="row">
   <div class="col-3">
   <div class="list-group">
     <span class="list-group-item bg-secondary"><strong style="color:#fff">人気の投稿　</strong><i class="fas fa-list-ol float-right"></i></span>
-    <span class="list-group-item"><small><%= @trend_categories_name[0][0] %></small>
+    <span class="list-group-item"><small>
+      <%= link_to category_path(@trend_categories_id[0][0]) do %>
+        <%= @trend_categories_name[0][0] %>
+      <% end %>
+    </small>
       <div class="badge badge-info float-right" >
         　<%= @trend_categories_name[0][1] %>
       </div></span>
-    <span class="list-group-item"><small><%= @trend_categories_name[1][0] %></small>
+    <span class="list-group-item"><small>
+      <%= link_to category_path(@trend_categories_id[1][0]) do %>
+        <%= @trend_categories_name[1][0] %>
+      <% end %>
+    </small>
       <div class="badge badge-warning float-right" >
         　<%= @trend_categories_name[1][1] %>
       </div>
     </span>
-    <span class="list-group-item"><small><%= @trend_categories_name[2][0] %></small>
+    <span class="list-group-item"><small>
+      <%= link_to category_path(@trend_categories_id[2][0]) do %>
+        <%= @trend_categories_name[2][0] %>
+      <% end %>
+      </small>
       <div class="badge badge-danger float-right" >
         　<%= @trend_categories_name[2][1] %>
       </div>
@@ -35,27 +46,36 @@
   </div>
 
   <div class="col-9">  
-  <div class="card">
-    <div class="card-body search_box">
-      <h5><strong>投稿検索</strong></h5>
-      
-      <div class="w-50" >
-        <%= form_with url: items_path, method: :get, local: true do |f| %>
-          <div class="mb-3 mt-2">
-            <%= f.text_field :name, placeholder: "アイテム名..", class: "form-control" %>
-            <%= f.text_field :brand, placeholder: "ブランド..", class: "form-control" %>
+    <div class="card">
+      <div class="card-body search_box">
+        <h5><strong>投稿検索</strong></h5><br>
+        
+        <div class="" >
+          <%= search_form_for @q do |f| %>
+          <div class="row" > 
+            <div class="col-9">
+              <%= f.search_field :name_cont, placeholder: "アイテム名..",class: "form-control" %><br>
+              <div class="form-inline">
+              <%= f.number_field :price_gteq ,class: "form-control" %>円以上〜<br>
+              <%= f.number_field :price_lt ,class: "form-control" %>円未満<br>
+            </div>
+            </div>
+            <div class="col-3">
+            <%= f.select :status, Item.statuses.keys.to_a,{ include_blank: '選択してください'},class: "form-control" %>
+            </div>
+            </div><br>
             <%= f.button :type => "submit", class: 'btn btn-dark' do %>
               <i class="fas fa-search">検索</i>
               <% end %>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
     </div>
-  </div>
-  <br><br><br><br><%= paginate @items %>
-    <br>
+    </div>
+    <br><br><br> <h2 style="text-align:center">投稿一覧</h2><br><br>
       <div class="index">
-      <%= render 'items', items: @items %>
+     
+      <%= render 'items', items: @results %>
     </div>
   </div>
 </div>
+<br><br><br><br><%= paginate @results %>
