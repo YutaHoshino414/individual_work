@@ -3,19 +3,25 @@
     <%= render 'users/sidemenu' %>
   </div>
   <div class="col-9">
-    <h3>購入済みアイテム</h3><br>
+    
+    <div class="jumbotron  bg-white">
+    <h3>購入アイテム</h3><br>
     <% @bought_items.each do |item| %>
-      <div class="card w-50 mb-2" style="background-color:#f8c983;">
-        <div class="row" style="margin:0;">
-        <%= image_tag 'item_default.png', class:"record" %>
-          <div class="col">
-            <small><%= item.name %></small><br>
-            <small><%= item.brand %></small><br>
-            <small><%= item.price %>円|</small><br>
-            <small><%= item.user.profile.username %>
+      <div class="card w-50 mb-4 shadow border-info" >
+          <div class="row" style="margin:0;">
+            <%= link_to item_path(item) do %>
+              <%= image_tag 'item_default.png', class:"record" %>
+            <% end %>
+            <div class="col">
+              <small><%= item.name %></small><br>
+              <small><%= item.brand %></small><br>
+              <small><%= item.category.name %></small><br>
+              <strong><%= item.price %>円</strong><br>
+              <i class="fas fa-heart unlike-btn"><small><%= item.favorites.count %></small></i>
+            </div>
           </div>
-        </div>
-       </div>
+         </div>
     <% end %>
+    </div>
   </div>
 </div>

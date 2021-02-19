@@ -8,9 +8,13 @@
         <%= f.label :brand %>
         <%= f.text_field :brand, class:"form-control" %>
       </div><br>
-      <div class="w-50">
-      <%= f.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' } %>
+      <div class="w-25">
+      <%= f.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' }, class:"form-control" %>
       </div><br>
+      <div class="mb-3 w-25">
+      <%= f.label :status,'アイテムの状態' %><div class="badge badge-danger" >必須</div><br>
+      <%= f.select :status, Item.statuses.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
+      </div>
       <div class="w-25">
         <%= f.label :price %>
         <%= f.text_field :price, class:"form-control" %>

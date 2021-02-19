@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     @items = Item.all.order(created_at: :desc).page(params[:page]).per(10)
     @parents = Category.all.where(ancestry: nil)
     @item = Item.new
-   @trend_categories_name = Item.joins(:category).group("categories.name").order('count_all DESC').limit(5).count.to_a
+    @trend_categories_name = Item.joins(:category).group("categories.name").order('count_all DESC').limit(5).count.to_a
   # binding.pry
   end
 

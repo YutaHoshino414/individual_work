@@ -1,54 +1,54 @@
 <div class="card">
-<div class="card-body introbox">
-  <div class="row">
-     <div class="col-3">
-     
-       <div class="image_default">
-         <i class="fas fa-user-alt"></i>  
+  <div class="card-body introbox">
+    <div class="row">
+       <div class="col-3">
+       
+         <div class="image_default">
+           <i class="fas fa-user-alt"></i>  
+         </div>
+         <strong>フォロワー：<%= @user.followers.count %></strong><br>
+         <strong>投稿：<%= @user.items.count %></strong><br>
+         <% if @user.id != current_user.id %> 
+         <%= render 'follow_form', user: @user %>
+         <% end %>
        </div>
-       <strong>フォロワー：<%= @user.followers.count %></strong><br>
-       <strong>投稿：<%= @user.items.count %></strong><br>
-       <% if @user.id != current_user.id %> 
-       <%= render 'follow_form', user: @user %>
-       <% end %>
-     </div>
-     <div class="col-5">
-     <strong>自己紹介：</strong>
-       <div class="card">
-         <div class="card-body">
-           <%= @user.profile.introduction %><br><br><br><br><br><br><br><br>
+       <div class="col-5">
+       <strong>自己紹介：</strong>
+         <div class="card">
+           <div class="card-body">
+             <%= @user.profile.introduction %><br><br><br><br><br><br><br><br>
+           </div>
          </div>
        </div>
-     </div>
-    <div class="col-4">
-      <strong>プロフィール：</strong>
-      <div class="card">
-        <table class="table">
-          <tbody>
-             <tr>
-               <th>ユーザー名</th>
-               <td><%= @user.profile.username %></td>
-             </tr>
-             <tr>
-               <th>氏名</th>
-               <td><%= @user.profile.last_name %><%= @user.profile.first_name %></td>
-             </tr>
-             <tr>
-               <th>誕生日</th>
-               <td><%= @user.profile.birthday %></td>
-             </tr>
-             <tr>
-               <th>性別</th>
-               <td><%= @user.profile.sex %></td>
-             </tr>
-             <tr>
-               <th>身長</th>
-               <td><%= @user.profile.body_length %></td>
-             </tr>
-           </tbody>
-        </table>
-     </div>
+      <div class="col-4">
+        <strong>プロフィール：</strong>
+        <div class="card">
+          <table class="table">
+            <tbody>
+               <tr>
+                 <th>ユーザー名</th>
+                 <td><%= @user.profile.username %></td>
+               </tr>
+               <tr>
+                 <th>氏名</th>
+                 <td><%= @user.profile.last_name %><%= @user.profile.first_name %></td>
+               </tr>
+               <tr>
+                 <th>誕生日</th>
+                 <td><%= @user.profile.birthday %></td>
+               </tr>
+               <tr>
+                 <th>性別</th>
+                 <td><%= @user.profile.sex %></td>
+               </tr>
+               <tr>
+                 <th>身長</th>
+                 <td><%= @user.profile.body_length %></td>
+               </tr>
+             </tbody>
+          </table>
+       </div>
+      </div>
     </div>
-  </div>
   </div>
 </div><br><br>

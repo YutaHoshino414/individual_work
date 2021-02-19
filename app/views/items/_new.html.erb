@@ -32,6 +32,11 @@
             <%= form.label :category,'カテゴリ選択（*要修正箇所）' %><br>
             <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' }, class:"form-control" %>
           </div><br>
+          <div class="mb-3 w-50">
+          <%= form.label :status,'アイテムの状態' %><div class="badge badge-danger" >必須</div><br>
+          <%= form.select :status, Item.statuses.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
+          </div>
+
           <div class="form-group">
             <%= form.label :price, "価格" %>
             <%= form.text_field :price, class:"form-control" %>

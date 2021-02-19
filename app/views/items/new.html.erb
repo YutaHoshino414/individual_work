@@ -1,32 +1,42 @@
-<h2>新規投稿</h2>
-<div class="container">
-  <div class="w-75">
-    <%= form_with(model: @item, local: true) do |form| %>
-      <div class="mb-3 w-50">
-        <%= form.label :name %>
-        <%= form.text_field :name,  placeholder: "投稿アイテム名を入力..", class: "form-control" %>
-      </div>
-      <div class="mb-3 w-50">
-        <%= form.label :brand %>
-        <%= form.text_field :brand,  placeholder: "ブランド名を入力..", class: "form-control" %>
-      </div>
-      <div class="field">
-      <%= form.label :category,'カテゴリ選択（*要修正箇所）' %><br>
-      <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' } %>
-      </div><br>
+<div class="row">
+  <div class="col-2">
+  </div>
+  <div class="col-8">
+    <h2>新規投稿</h2>
+    <div class="jumbo">
+      <%= form_with(model: @item, local: true) do |form| %>
+        <div class="mb-3 w-75">
+          <%= form.label :name %>
+          <%= form.text_field :name,  placeholder: "投稿アイテム名を入力..", class: "form-control" %>
+        </div>
+        <div class="mb-3 w-75">
+          <%= form.label :brand %>
+          <%= form.text_field :brand,  placeholder: "ブランド名を入力..", class: "form-control" %>
+        </div>
+        <div class="mb-3 w-50">
+        <%= form.label :category,'カテゴリ選択（*要修正箇所）' %><br>
+        <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' },class: "form-control" %>
+        </div>
 
-      <div class="mb-3 w-25">
-        <%= form.label :price %>
-        <%= form.text_field :price,  placeholder: "価格を入力..", class: "form-control" %><span>円(税込)</span>
-      </div>
-      <div class="mb-3 w-50">
-        <%= form.label :content %>
-        <%= form.text_area :content, placeholder: "を入力してください..", class: "form-control" %>
-      </div>
-    
-      <br>
-        <%= form.submit '登録する', class: "btn btn-primary" %>
-    <% end %>
+        <div class="mb-3 w-50">
+        <%= form.label :status,'アイテムの状態' %><div class="badge badge-danger" >必須</div><br>
+        <%= form.select :status, Item.statuses.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
+        </div>
+  
+        <div class="mb-3 w-25">
+          <%= form.label :price %>
+          <%= form.text_field :price,  placeholder: "価格を入力..", class: "form-control" %><span>円(税込)</span>
+        </div>
+        <div class="mb-3 w-75">
+          <%= form.label :content %>
+          <%= form.text_area :content, placeholder: "投稿の紹介文を入力してください..", class: "form-control" %>
+        </div>
+      
+        <br>
+          <%= form.submit '投稿する', class: "btn btn-info btn-block w-75" %>
+      <% end %>
+    </div>
   </div>
 </div>
+
 

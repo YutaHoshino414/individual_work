@@ -7,6 +7,7 @@
   
   <div class="col-9"><br>
     <%= render 'users/intro' %>
+    <div class="jumbotron  bg-white">
      <h3>フォロー中のユーザー<i class="fas fa-users"></i></h3><br>
      <div class="row">
        <% @user.following.each do |user| %>
@@ -22,11 +23,13 @@
            </div>
         </div>
         <% end %>
-     </div><br><br><hr>
-     <h3>投稿中のアイテム</i></h3>
+     </div>
+    </div><br><br><hr>
+    <div class="jumbotron  bg-white">
+    <h3>投稿中のアイテム</i></h3>
      <div class="row ">
        <% @onsell_items.each do |onsell| %>
-        <div class="card w-50 mb-2 shadow border-secondary" >
+        <div class="card w-50 mb-4 shadow border-secondary" >
           <div class="row" style="margin:0;">
             <%= link_to item_path(onsell) do %>
               <%= image_tag 'item_default.png', class:"record" %>
@@ -41,6 +44,7 @@
           </div>
          </div>
         <% end %>
+      </div>
       </div>
    </div>
   </div>

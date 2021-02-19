@@ -1,4 +1,4 @@
-<h2>アイテム詳細</h2><br>
+<h2>アイテム詳細</h2>
 <div class="row">
   <div class="col-2">
     <%= link_to "投稿一覧", items_path %>
@@ -9,6 +9,10 @@
         <%= image_tag 'item_default.png' %>
         <table class="table w-50">
           <tbody>
+              <tr>
+                <th>投稿者</th>
+                <td><%= @item.user.profile.username %></td>
+              </tr>
               <tr>
                 <th>アイテム名</th>
                 <td><%= @item.name %></td>
@@ -25,27 +29,24 @@
                   <% end %>
               </tr>
               <tr>
+                <th>商品の状態</th>
+                <td><%= @item.status %></td>
+              </tr>
+              <tr>
                 <th>アイテム紹介</th>
                 <td><%= @item.content %></td>
               </tr>
-              <tr>
-                <th>価格</th>
-                <td><%= @item.price.to_s(:delimited, delimiter: ',') %><strong> 円（税込）</strong></td>
-              </tr>
-              <tr> 
-                <th>投稿日</th>
-                <td><%= @item.created_at.strftime('%Y-%m-%d %T') %></td>
-              </tr>
-              <tr>
-                <th>投稿者</th>
-                <td><%= @item.user.profile.username %></td>
-              </tr>
+              
               <tr>
                 <th>お気に入り</th>
                 <td><i class="fas fa-heart unlike-btn"><%= @item.favorites.count %></i>
                 　　　<%= render 'favorites/index' %>
                 </td>
               </tr>
+              <tr>
+              <th>価格</th>
+              <td><h6><%= @item.price.to_s(:delimited, delimiter: ',') %><strong> 円（税込）</strong></h6></td>
+            </tr>
           </tbody>
         </table>
         <% if @item.user_id == current_user.id %>
@@ -57,6 +58,7 @@
         <% end %>
         <% end %>
       </div>
+      <i class="far fa-clock"></i><small><%= @item.created_at.strftime('%Y-%m-%d %T') %></small>
     </div> 
    
       <% if @item.buyer_id.present? %>
