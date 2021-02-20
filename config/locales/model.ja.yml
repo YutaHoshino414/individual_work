@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    models:
+      item: アイテム
+      user: ユーザー
+      profile: プロフィール
+      category: カテゴリー
+    attributes:
+      item:
+        name: アイテム名
+        brand: ブランド
+        price: 価格
+        status: 状態
+        content: 商品紹介
+        delivery_from: 出品地域
+      profile:
+        username: ユーザーネーム
+        first_name: 名
+        last_name: 性
+        first_name_kana: 名(かな)
+        last_name_kana: 性(かな)
+        birthday: 誕生日
+        sex: 性別
+        body_length: 身長
+        introduction: 自己紹介
+      category:
+        name: カテゴリー

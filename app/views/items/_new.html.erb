@@ -21,30 +21,38 @@
       <%= form_with( model: @item, remote: true ) do |form| %>
         <div class="modal-body">
           <div class="form-group">
-            <%= form.label :name, "アイテム名" %>
+            <strong><%= form.label :name, "アイテム名" %></strong>　<div class="badge badge-danger" >必須</div>
             <%= form.text_field :name, class:"form-control" %>
-          </div>
-          <div class="form-group">
-            <%= form.label :brand, "ブランド" %>
-            <%= form.text_field :brand, class:"form-control" %>
-          </div>
-          <div class="field">
-            <%= form.label :category,'カテゴリ選択（*要修正箇所）' %><br>
-            <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' }, class:"form-control" %>
-          </div><br>
-          <div class="mb-3 w-50">
-          <%= form.label :status,'アイテムの状態' %><div class="badge badge-danger" >必須</div><br>
-          <%= form.select :status, Item.statuses.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
           </div>
 
           <div class="form-group">
-            <%= form.label :price, "価格" %>
-            <%= form.text_field :price, class:"form-control" %>
+            <strong><%= form.label :brand, "ブランド" %></strong>　<div class="badge badge-danger" >必須</div>
+            <%= form.text_field :brand, class:"form-control" %>
+          </div>
+
+          <div class="field w-75">
+            <strong><%= form.label :category,'カテゴリ選択' %></strong>　<div class="badge badge-danger" >必須</div><br>
+            <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' }, class:"form-control" %>
+          </div><br>
+
+          <div class="mb-3 w-50">
+            <strong><%= form.label :status,'アイテムの状態' %></strong>　<div class="badge badge-danger" >必須</div><br>
+            <%= form.select :status, Item.statuses.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
+          </div>
+
+          <div class="mb-4 w-50">
+            <strong><%= form.label :delivery_from %></strong>　<div class="badge badge-danger" >必須</div><br>
+            <%= form.select :delivery_from, Item.delivery_froms.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
+          </div>
+
+          <strong><%= form.label :price %></strong>　<div class="badge badge-danger" >必須</div>
+          <div class="mb-3 w-75 form-inline">
+            <%= form.text_field :price,  placeholder: "商品価格..", class: "form-control" %><strong>円(税込)</strong>
           </div>
 
           <div class="form-group">
             <%= form.label :content, "アイテム紹介" %>
-            <%= form.text_area :content, class:"form-control" %>
+            <%= form.text_area :content, class:"form-control", rows:"5" %>
           </div>
         </div>
         <div class="modal-footer">

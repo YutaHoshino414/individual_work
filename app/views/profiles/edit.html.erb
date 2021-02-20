@@ -2,34 +2,49 @@
   <div class="col-3">
   <%= render 'users/sidemenu' %>
   </div>
-  <div class="col-9 bg-white">
-    <h2>プロフィール編集</h2><br>
-    <div class=" mx-auto">
+  <div class="col-9">
+    <h2>プロフィール編集</h2>
+    <div class="jumbotron bg-white mx-auto">
       <%= form_with(model: @profile, local: true) do |f| %>  
-        <%= f.label :username,'ユーザー名' %>
-        <%= f.text_field :username, class: "form-control" %><br>
-        <%= f.label :first_user,'名前' %>
-        <%= f.text_field :first_name, class: "form-control" %><br>
-        <%= f.label :last_name,'苗字' %>
+        <div class="w-50">
+          <strong><%= f.label :username,'ユーザー名' %></strong>
+          <%= f.text_field :username, class: "form-control" %><br>
+        </div>
+      <div class="row"> 
+        <div class="col-4">
+        <strong><%= f.label :last_name,'苗字' %></strong>
         <%= f.text_field :last_name, class: "form-control" %><br>
+        </div>
+
+        <div class="col-4">
+        <strong><%= f.label :first_user,'名前' %></strong>
+        <%= f.text_field :first_name, class: "form-control" %><br>
+        </div>
+        
+        </div>
         <div class="w-25">
-        <%= f.label :sex,'性別' %>
-        <%= f.select :sex,Profile.sexes.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
-        </div><br>
-        <div class=" w-25">
-        <%= f.label :body_length,'身長' %>
-        <div class="input-group-append">
-        <%= f.text_field :body_length, class: "form-control" %>cm
-        </div><br>
-        <div class="">
-        <%= f.label :birthday,'誕生日' %>
+        <strong><%= f.label :birthday,'誕生日' %></strong>
         <%= f.date_field :birthday, class: "form-control" %>
         </div><br>
-        </div><br>
-        <%= f.label :introduction,'自己紹介' %>
-        <%= f.text_area :introduction, class: "form-control" %><br>
 
-        <%= f.submit "編集する", class: "btn btn-lg, btn-success" %>
+        <div class="w-25">
+        <strong><%= f.label :sex,'性別' %></strong>
+        <%= f.select :sex,Profile.sexes.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
+        </div><br>
+
+        <div class="mb-4 w-50">
+        <strong><%= f.label :body_length,'身長' %></strong>
+          <div class="form-inline">
+            <%= f.text_field :body_length, class: "form-control" %>cm
+          </div>
+        </div>
+
+        <div class=" w-75">
+        <strong><%= f.label :introduction,'自己紹介' %></strong>
+        <%= f.text_area :introduction, class: "form-control", rows:"5" %><br>
+        </div><br>
+
+        <%= f.submit "編集する", class: "btn btn-success btn-block w-75" %>
       <% end %><br>
     </div><hr>
   <%= link_to 'ホームに戻る', user_path(@profile.user_id) %>

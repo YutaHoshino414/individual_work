@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @trend_categories_name = Item.joins(:category).group("categories.name").order('count_all DESC').limit(5).count.to_a
     @trend_categories_id = Item.group(:category_id).order('count_all DESC').limit(5).count.to_a
   # binding.pry
-    @results = @q.result.page(params[:page]).per(10)
+    @results = @q.result.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
