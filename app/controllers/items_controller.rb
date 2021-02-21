@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
     @item.user_id = current_user.id
     respond_to do |format|
       if @item.save
+        flash.now[:notice] = '投稿が作成されました'
         format.js { render :create }
         @results = Item.all.order(created_at: :desc).page(params[:page]).per(10)
         # @items = Item.all.order(created_at: :desc).page(params[:page]).per(10)

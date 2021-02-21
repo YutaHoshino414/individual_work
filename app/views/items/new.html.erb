@@ -3,7 +3,7 @@
   </div>
   <div class="col-8">
     <h2>新規投稿</h2><hr>
-    <div class="jumbo">
+    <div class="jumbotron">
       <%= form_with(model: @item, local: true) do |form| %>
         <div class="mb-4 w-75">
           <strong><%= form.label :name %></strong>　<div class="badge badge-danger" >必須</div>
@@ -30,7 +30,7 @@
 
         <strong><%= form.label :price %></strong>　<div class="badge badge-danger" >必須</div>
         <div class="mb-5 w-50 form-inline">
-          <%= form.text_field :price,  placeholder: "商品価格..", class: "form-control" %><span>円(税込)</span>
+          <%= form.text_field :price,  placeholder: "", class: "form-control" %><span>円(税込)</span>
         </div>
         <div class="mb-3 w-75">
           <strong><%= form.label :content %></strong>
