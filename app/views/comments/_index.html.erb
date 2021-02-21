@@ -2,11 +2,11 @@
   <% comments.each do |comment| %>
     <% if comment.id.present? %>
       <li>
-        <strong>　(<%= comment.user.profile.username %>さん)　</strong>|<i class="far fa-clock"></i><%= comment.created_at.strftime('%Y-%m-%d') %><br>
+        <strong>　(<%= comment.user.profile.username %>さん)　</strong>
         <div class="balloon1-left">
           <p>こんにちは。これは例です。</p>
           <p><%= comment.content %></p>
-            <div style="float:right;">
+            <div style="float:right;"><%= comment.created_at.strftime('%Y-%m-%d') %><i class="far fa-clock"></i>|
             <% if comment.user_id == current_user.id %>
              <%= link_to edit_item_comment_path(item, comment), remote: true do %>
                <i class="fas fa-edit"></i>｜

@@ -2,7 +2,7 @@
 <div class="row">
   <% @category.items.each do |item| %>
   <div class="col-sm-3 mb-5">
-    <div class="card shadow h-100" id="<%= item.id %>">
+    <div class="card shadow h-100 scale" id="<%= item.id %>">
         <%= link_to item_path(item.id) do%>
           <%= image_tag 'item_default.png' %>
         <% end %>

@@ -1,7 +1,7 @@
 <h1>ユーザー一覧</h1><br>
 <div class="row">
   <div class="col-4">
-      <div class="jumbotron bg-white">
+      <div class="jumbotron">
       <h5><strong>ユーザー検索</strong></h5><hr><br>
         <%= search_form_for @q do |f| %>
         <div class="" > 
@@ -24,7 +24,7 @@
 
   <div class="col-8">
     <% @results.each do |user| %>
-      <div class="card mb-3">
+      <div class="card mb-3 scale">
         <div class="card-body border-bot ">
             <i class="fas fa-user-circle"></i>
               <span>　id: <%= user.id %>｜</span>
@@ -36,7 +36,7 @@
               <span>｜<i class="fas fa-users"></i>
                 <%= user.followers.count %>
               </span>
-              <span>｜<i class="fas fa-camera-retro"></i>
+              <span>｜<i class="fas fa-tshirt"></i>
                 <%= user.items.count %>
               </span>
              

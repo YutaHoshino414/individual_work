@@ -9,7 +9,7 @@
 </div>
 <!-- モーダルの設定 -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
@@ -30,7 +30,7 @@
             <%= form.text_field :brand, class:"form-control" %>
           </div>
 
-          <div class="field w-75">
+          <div class="field w-50">
             <strong><%= form.label :category,'カテゴリ選択' %></strong>　<div class="badge badge-danger" >必須</div><br>
             <%= form.select :category_id, Category.all.where(ancestry: "1").collect { |p| [ p.name, p.id ] }, { include_blank: '選択してください' }, class:"form-control" %>
           </div><br>

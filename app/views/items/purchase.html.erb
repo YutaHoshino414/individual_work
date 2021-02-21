@@ -1,26 +1,51 @@
-<h2>購入画面</h2><br>
-
-<div style="background-color:#fff;"><hr>
-<h5><strong>**以下の内容で、購入を確定する。**</strong></h5><br>
-
-  <%= form_with(model: @item, local: true, url: pay_item_path) do |form| %>
-    <%= form.hidden_field :name %>
-    <%= form.hidden_field :brand %>
-    <%= form.hidden_field :content %>
-    <%= form.hidden_field :price %>
-    <p>アイテム名:<%= @item.name %></p>
-  
-    <p>アイテム詳細:<%= @item.brand %></p>
-
-    <p>アイテム詳細:<%= @item.content %></p>
-
-    <p>価格:<%= @item.price%></p><hr>
-  
-    <script 
-      type="text/javascript" 
-      src="https://checkout.pay.jp" 
-      class="payjp-button" 
+<h2>購入画面</h2><hr>
+<div class="">
+  <h5><strong>**以下の内容で、購入を確定する。**</strong></h5><br>
+ <div class="row">
+    <div class="col-1"></div>
+    <div class="col-3">
+    <%= image_tag 'item_default.png' %>
+    </div>
+    <div class="col-6">
+      <%= form_with(model: @item, local: true, url: pay_item_path) do |form| %>
+        <%= form.hidden_field :name %>
+        <%= form.hidden_field :brand %>
+        <%= form.hidden_field :content %>
+        <%= form.hidden_field :price %>
+      <table class="table ">
+          <tbody>
+            <tr>
+              <th>アイテム</th>
+              <td><%= @item.name %></td>
+            </tr>
+            <tr>
+              <th>ブランド</th>
+              <td><%= @item.brand %></td>
+            </tr>
+            <tr>
+              <th>アイテム紹介</th>
+              <td><%= @item.content %></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr class="table-info">
+              <th class="align-bottom"><h6>金額</h6></th>
+              <td><h6><%= @item.price%>円(税込み)</h6></td>
+            </tr>
+          </tbody>
+      </table>
+     <strong>**金額を確認し、下記フォームより決済する</strong><hr> 
+      <script 
+        type="text/javascript" 
+        src="https://checkout.pay.jp" 
+        class="payjp-button" 
         data-key="pk_test_401ce4da329e4e80e899e8dd">
-    </script>
-  <% end %><br>
-</div>
+      </script>
+      <% end %><br>
+    </div>
+  </div>
+  
+</div><hr>
+<%= link_to "商品詳細に戻る", item_path(@item) %>

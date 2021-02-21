@@ -9,7 +9,7 @@ ja:
       item:
         name: アイテム名
         brand: ブランド
-        price: 価格
+        price: 金額
         status: 状態
         content: 商品紹介
         delivery_from: 出品地域
