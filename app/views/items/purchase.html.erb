@@ -1,6 +1,6 @@
 <h2>購入画面</h2><hr>
 <div class="">
-  <h5><strong>**以下の内容で、購入を確定する。**</strong></h5><br>
+  <h5 style="text-align:center;"><strong>**以下の内容で、購入を確定する。**</strong></h5><br>
  <div class="row">
     <div class="col-1"></div>
     <div class="col-3">
@@ -41,7 +41,7 @@
         type="text/javascript" 
         src="https://checkout.pay.jp" 
         class="payjp-button" 
-        data-key="pk_test_401ce4da329e4e80e899e8dd">
+        data-key="<%= ENV["PAYJP_PUBLIC_KEY"] %>">
       </script>
       <% end %><br>
     </div>

@@ -51,3 +51,4 @@ gem 'ancestry'
 gem 'ransack'
 # 決済
 gem 'payjp'
+gem 'dotenv-rails'
