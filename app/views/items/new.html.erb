@@ -2,16 +2,16 @@
   <div class="col-2">
   </div>
   <div class="col-8">
-    <h2>新規投稿</h2>
+    <h2>新規投稿</h2><hr>
     <div class="jumbo">
       <%= form_with(model: @item, local: true) do |form| %>
         <div class="mb-4 w-75">
           <strong><%= form.label :name %></strong>　<div class="badge badge-danger" >必須</div>
-          <%= form.text_field :name,  placeholder: "投稿アイテム名..", class: "form-control" %>
+          <%= form.text_field :name,  placeholder: "アイテム名を入力..", class: "form-control" %>
         </div>
         <div class="mb-4 w-75">
           <strong><%= form.label :brand %></strong>　<div class="badge badge-danger" >必須</div>
-          <%= form.text_field :brand,  placeholder: "ブランド名..", class: "form-control" %>
+          <%= form.text_field :brand,  placeholder: "ブランド", class: "form-control" %>
         </div>
         <div class="mb-4 w-50">
           <strong><%= form.label :category, 'カテゴリ選択' %></strong>　<div class="badge badge-danger" >必須</div>（*要修正箇所）<br>
