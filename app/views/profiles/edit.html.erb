@@ -2,9 +2,9 @@
   <div class="col-3">
   <%= render 'users/sidemenu' %>
   </div>
-  <div class="col-9">
+  <div class="col-7">
     <h2>プロフィール編集</h2>
-    <div class="jumbotron bg-white mx-auto">
+    <div class="jumbotron mx-auto">
       <%= form_with(model: @profile, local: true) do |f| %>  
         <div class="w-50">
           <strong><%= f.label :username,'ユーザー名' %></strong>
@@ -22,7 +22,7 @@
         </div>
         
         </div>
-        <div class="w-25">
+        <div class="w-50">
         <strong><%= f.label :birthday,'誕生日' %></strong>
         <%= f.date_field :birthday, class: "form-control" %>
         </div><br>
