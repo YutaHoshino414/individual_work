@@ -22,6 +22,11 @@
         <%= f.select :status, Item.statuses.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
       </div>
 
+      <div class="mb-3 w-50">
+        <strong><%= f.label :delivery_from %></strong>
+        <%= f.select :delivery_from, Item.delivery_froms.keys.to_a, { include_blank: '選択してください'}, class: "form-control" %>
+      </div>
+
       <strong><%= f.label :price %></strong>
         <div class="mb-5 w-50 form-inline">
           <%= f.text_field :price,  placeholder: "商品価格..", class: "form-control" %><span>円(税込)</span>
