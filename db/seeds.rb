@@ -1,7 +1,7 @@
 @count = 1
 5.times do |n|
   @username = "test#{@count}"
-  email = "#{username}@hoge.com"
+  email = "#{@username}@hoge.com"
   password = "password"
   @user = User.create!(
     email: email,
@@ -10,7 +10,7 @@
   )
 
   5.times do |n|
-   username = @username
+  username = "#{@username}"
    user_id = @user.id
      Profile.create!(
        username: username,
@@ -19,6 +19,17 @@
   end
   @count += 1
 end
+
+Item.create!(
+  name:""
+  brand:
+  status:
+  delivery_from:
+  price:
+  content:
+  category_id:
+  user_id:
+)
 
 
 #カテゴリーデータ
