@@ -1,36 +1,43 @@
-@count = 1
-5.times do |n|
-  @username = "test#{@count}"
-  email = "#{@username}@hoge.com"
-  password = "password"
-  @user = User.create!(
-    email: email,
-    password: password,
-    password_confirmation: password,
-  )
+# @count = 1
+# 5.times do |n|
+#   @username = "test#{@count}"
+#   email = "#{@username}@hoge.com"
+#   password = "password"
+#   @user = User.create!(
+#     email: email,
+#     password: password,
+#     password_confirmation: password,
+#   )
 
-  5.times do |n|
-  username = "#{@username}"
-   user_id = @user.id
-     Profile.create!(
-       username: username,
-       user_id: user_id
-     )
-  end
+#   5.times do |n|
+#   username = "#{@username}"
+#    user_id = @user.id
+#      Profile.create!(
+#        username: username,
+#        user_id: user_id
+#      )
+#   end
+#   @count += 1
+# end
+
+@count = 5
+5.times do |n|
+  # name = "テストアイテム"
+  # brand = 
+  category_id ="#{@count}"
+  user_id ="#{@count}"
+    Item.create!(
+      name:"テストアイテム",
+      brand:"ノーブランド",
+      status:1,
+      delivery_from:1,
+      price:2000,
+      content:"テスト投稿",
+      category_id: category_id,
+      user_id: user_id
+    )
   @count += 1
 end
-
-Item.create!(
-  name:""
-  brand:
-  status:
-  delivery_from:
-  price:
-  content:
-  category_id:
-  user_id:
-)
-
 
 #カテゴリーデータ
 # # 親階層

@@ -35,6 +35,10 @@
                 <td><%= @item.status %></td>
               </tr>
               <tr>
+                <th>出品地域</th>
+                <td><%= @item.delivery_from %></td>
+              </tr>
+              <tr>
                 <th>アイテム紹介</th>
                 <td><%= @item.content %></td>
               </tr>
@@ -44,10 +48,6 @@
                 　　　<%= render 'favorites/index' %>
                 </td>
               </tr>
-              <tr>
-              <th><h6>金額</h6></th>
-              <td><h6><%= @item.price.to_s(:delimited, delimiter: ',') %><strong> 円（税込）</strong></h6></td>
-            </tr>
           </tbody>
         </table>
         <% if @item.user_id == current_user.id %>
@@ -60,6 +60,15 @@
         <% end %>
       </div>
       <i class="far fa-clock"></i><small><%= @item.created_at.strftime('%Y-%m-%d %T') %></small>
+        <div class="mx-auto">
+          <table class=" mx-auto">
+          <tbody>
+          <tr>
+            <th><h5>金額：</h5></th>
+            <td><h5>　　<%= @item.price.to_s(:delimited, delimiter: ',') %><strong> 円（税込）</strong></h5></td>
+          </tr>
+         </tbody></table>
+        </div>
     </div> 
    
       <% if @item.buyer_id.present? %>
