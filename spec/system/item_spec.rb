@@ -12,6 +12,7 @@ RSpec.describe 'アイテム機能', type: :system do
     FactoryBot.create(:category_03)
     @category = FactoryBot.create(:category_04)
     @item = FactoryBot.create(:Item_01, category:@category, user:@user2)
+    @item2 = FactoryBot.create(:Item_02, category:@category, user:@user2)
   end
 
   describe '新規作成機能' do
@@ -46,6 +47,25 @@ RSpec.describe 'アイテム機能', type: :system do
       end
     end
   end
+  describe '一覧表示機能' do
+    let!(:login) {
+      visit new_user_session_path
+      fill_in 'user_email', with: 'user02@test.com'
+      fill_in 'user_password', with: 'password'
+      click_button 'ログイン'
+    }
+    context '一覧画面に遷移した場合' do
+      it '作成済みのタスク一覧が表示される' do
+        visit items_path
+        expect(page).to have_content '投稿一覧'
+        expect(page).to have_content 'トレーナー'
+        expect(page).to have_content 'パーカー/テスト'
+        expect(page).to have_content 'ユーザー2'
+        sleep 3
+
+      end
+    end
+  end
   describe '編集機能' do
     let!(:login) {
       visit new_user_session_path
@@ -68,6 +88,28 @@ RSpec.describe 'アイテム機能', type: :system do
         expect(page).to have_content '無印良品'
         expect(page).to have_content '神奈川県'
         expect(page).to have_content '無印良品に変更しました'
+        sleep 1
+
+      end
+    end
+  end
+  describe '削除機能' do
+    let!(:login) {
+      visit new_user_session_path
+      fill_in 'user_email', with: 'user02@test.com'
+      fill_in 'user_password', with: 'password'
+      click_button 'ログイン'
+    }
+    context 'アイテム詳細から削除ボタンを押した場合' do
+      it '投稿が削除される' do
+        visit item_path(@item)
+        expect(page).to have_content 'アイテム詳細'
+       
+        page.accept_confirm do
+          find(".fa-trash-alt").click
+          sleep 3
+        end
+        expect(page).to have_content '投稿を削除しました'
         sleep 3
 
       end
