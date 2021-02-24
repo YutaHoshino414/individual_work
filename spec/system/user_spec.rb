@@ -88,9 +88,17 @@ RSpec.describe 'ユーザー管理機能', type: :system do
         expect(page).to have_content '花子'
         expect(page).to have_content '2000-01-01'
         expect(page).to have_content '山田花子です'
-        sleep 1
+        sleep 2
         # save_and_open_page
 
+      end
+      it 'ログアウトができる' do
+        click_link 'ログアウト'
+        sleep 2
+        expect(page).to have_content 'ログアウトしました'
+        expect(page).to have_content 'ログイン'
+        expect(page).to have_content 'パスワードを忘れましたか?'
+        sleep 2
       end
     end
   end
@@ -113,15 +121,21 @@ RSpec.describe 'ユーザー管理機能', type: :system do
       end
       it 'フォローしたユーザー情報が（自分の）マイページ上に表示される' do
         click_link 'ユーザー一覧'
-        click_link 'ユーザー3'
+        click_link 'ユーザー4'
         expect(page).to have_content 'プロフィール'
-        expect(page).to have_content 'ユーザー3'
+        expect(page).to have_content 'ユーザー4'
         click_button 'フォローする'
         click_link 'マイページ'
+        sleep 1
         expect(page).to have_content 'ユーザー2'
         expect(page).to have_content 'ユーザー2です'
         expect(page).to have_content 'フォロー中のユーザー'
-        expect(page).to have_content 'ユーザー3'
+        expect(page).to have_content 'ユーザー4'
+        click_link 'ユーザー4'
+        expect(page).to have_content 'プロフィール'
+        expect(page).to have_content 'ユーザー4'
+        expect(page).to have_content 'ユーザー4です!'
+        click_button 'フォロー解除'
         sleep 3
 
       end
