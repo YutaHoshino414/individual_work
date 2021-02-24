@@ -6,6 +6,7 @@ FactoryBot.define do
     username { "ユーザー2" }
     sex { 1 }
     body_length { 160 }
+    introduction { "ユーザー2です" }
   end
   factory :profile_third, class: Profile do
     username { "ユーザー3" }

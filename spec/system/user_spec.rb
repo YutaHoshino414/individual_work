@@ -88,8 +88,41 @@ RSpec.describe 'ユーザー管理機能', type: :system do
         expect(page).to have_content '花子'
         expect(page).to have_content '2000-01-01'
         expect(page).to have_content '山田花子です'
-        sleep 4
+        sleep 1
         # save_and_open_page
+
+      end
+    end
+  end
+  describe 'フォロー／フォロワー機能のテスト' do
+    context 'ログインが済んでいる場合' do
+      before do
+        visit new_user_session_path
+        fill_in 'user_email', with: 'user02@test.com'
+        fill_in 'user_password', with: 'password'
+        click_button 'ログイン'
+      end
+      it '他のユーザーをフォローできる' do
+        click_link 'ユーザー一覧'
+        click_link 'ユーザー3'
+        expect(page).to have_content 'プロフィール'
+        expect(page).to have_content 'ユーザー3'
+        click_button 'フォローする'
+        sleep 1
+
+      end
+      it 'フォローしたユーザー情報が（自分の）マイページ上に表示される' do
+        click_link 'ユーザー一覧'
+        click_link 'ユーザー3'
+        expect(page).to have_content 'プロフィール'
+        expect(page).to have_content 'ユーザー3'
+        click_button 'フォローする'
+        click_link 'マイページ'
+        expect(page).to have_content 'ユーザー2'
+        expect(page).to have_content 'ユーザー2です'
+        expect(page).to have_content 'フォロー中のユーザー'
+        expect(page).to have_content 'ユーザー3'
+        sleep 3
 
       end
     end
