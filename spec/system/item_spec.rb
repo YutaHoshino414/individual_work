@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'アイテム機能', type: :system do
+RSpec.describe 'アイテム管理機能', type: :system do
   before do
     @user2 = FactoryBot.create(:user_02)
     @user3 = FactoryBot.create(:user_03)
@@ -12,7 +12,7 @@ RSpec.describe 'アイテム機能', type: :system do
     FactoryBot.create(:category_03)
     @category = FactoryBot.create(:category_04)
     @item = FactoryBot.create(:Item_01, category:@category, user:@user2)
-    @item2 = FactoryBot.create(:Item_02, category:@category, user:@user2)
+    @item2 = FactoryBot.create(:Item_02, category:@category, user:@user3)
   end
 
   describe '新規作成機能' do
@@ -61,7 +61,7 @@ RSpec.describe 'アイテム機能', type: :system do
         expect(page).to have_content 'トレーナー'
         expect(page).to have_content 'パーカー/テスト'
         expect(page).to have_content 'ユーザー2'
-        sleep 3
+        sleep 2
 
       end
     end
@@ -107,11 +107,33 @@ RSpec.describe 'アイテム機能', type: :system do
        
         page.accept_confirm do
           find(".fa-trash-alt").click
-          sleep 3
+          sleep 1
         end
         expect(page).to have_content '投稿を削除しました'
-        sleep 3
+        sleep 1
 
+      end
+    end
+  end
+  describe '決済機能' do
+    let!(:login) {
+      visit new_user_session_path
+      fill_in 'user_email', with: 'user02@test.com'
+      fill_in 'user_password', with: 'password'
+      click_button 'ログイン'
+    }
+    context '他のユーザー投稿詳細に遷移した場合' do
+      it '購入画面が表示され遷移できる' do
+        visit item_path(@item2)
+        expect(page).to have_content 'アイテム詳細'
+        expect(page).to have_content '投稿者'
+        expect(page).to have_content 'ユーザー3'
+        click_link '購入画面にすすむ'
+        sleep 5
+        click_button 'カードで支払う'
+        
+
+        sleep 5
       end
     end
   end

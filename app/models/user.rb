@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validates :email, length: {maximum: 30}
   has_many :items, dependent: :destroy
   has_many :favorites, dependent: :destroy
   # Include default devise modules. Others available are:
