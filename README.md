@@ -1,4 +1,5 @@
-![Uploading スクリーンショット 2021-02-22 5.28.44.png…]()
+<img width="1317" alt="スクリーンショット 2021-02-22 5 28 44" src="https://user-images.githubusercontent.com/72447845/109145614-0bbacc80-77a6-11eb-9ca5-dd7db3453938.png">
+
 ## コーディネート投稿サービス「フクオタ (仮)」  
 
 [Heroku](https://serene-bayou-03832.herokuapp.com/)  
