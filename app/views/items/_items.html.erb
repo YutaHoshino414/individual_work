@@ -2,9 +2,17 @@
   <% @results.each do |item| %>
   <div class="col-sm-4 mb-5">
     <div class="card shadow h-100 scale" id="<%= item.id %>">
+      <% if item.image.attached? %>
+        <%= link_to item_path(item.id) do%>
+        <%= image_tag item.image.variant(resize:'250x350') %>
+        <% end %>
+      <% else %>
         <%= link_to item_path(item.id) do%>
           <%= image_tag 'item_default.png' %>
         <% end %>
+      <% end %>
+
+       <div>
       <div class="card-footer border-below">
         <% if item.buyer_id.present? %>
           <fieldset disabled><button class="btn btn-danger btn-block" style="text-align:center">SOLD OUT</button> </fieldset> 
@@ -14,6 +22,7 @@
           <i class="far fa-clock"></i>
           <small><%= item.created_at.strftime('%Y/%m/%d') %>:_</small><%= item.user.profile.username %><br>
           <i class="fas fa-heart unlike-btn"><small><%= item.favorites.count %></small></i>
+      </div>
       </div>
     </div>
   </div>

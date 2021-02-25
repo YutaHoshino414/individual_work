@@ -47,7 +47,10 @@
           <strong><%= form.label :content %></strong>
           <%= form.text_area :content, placeholder: "商品の紹介文..", class: "form-control", rows:"8" %>
         </div>
-      
+        <div class="field">
+        <strong><%= form.label :image %></strong>
+        <%= form.file_field :image %>
+        </div><br>
         <br>
           <%= form.submit '投稿する', class: "btn btn-info btn-lg btn-block w-75" %>
       <% end %>

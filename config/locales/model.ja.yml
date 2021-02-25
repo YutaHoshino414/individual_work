@@ -13,6 +13,7 @@ ja:
         status: 状態
         content: 商品紹介
         delivery_from: 出品地域
+        image: イメージ画像
       profile:
         username: ユーザーネーム
         first_name: 名

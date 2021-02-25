@@ -36,6 +36,9 @@
         <strong><%= f.label :content %></strong>
         <%= f.text_area :content, class:"form-control", rows:"5" %>
       </div><br>
+      <div class="field">
+    <%= f.file_field :image %>
+    </div><br>
 
       <%= f.submit "編集する", class:"btn btn-info btn-lg btn-block w-75" %>
     <% end %><br><hr>

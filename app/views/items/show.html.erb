@@ -6,7 +6,11 @@
   <div class="col-9">
     <div class="jumbo ">
       <div class="row">
+      <% if @item.image.attached? %>
+      <%= image_tag @item.image.variant(resize:'300x400') %>
+      <% else %>
         <%= image_tag 'item_default.png' %>
+      <% end %>
         <table class="table w-50 ml-3">
           <tbody>
               <tr>

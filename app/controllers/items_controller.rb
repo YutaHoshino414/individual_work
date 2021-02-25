@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
       @comments = @item.comments
       @comment = @item.comments.build
       @favorite = current_user.favorites.find_by(item_id: @item.id)
+     
   end
 
   def edit
@@ -71,7 +72,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :brand, :status, :delivery_from, :price, :content, :category_id)
+    params.require(:item).permit(:name, :brand, :status, :delivery_from, :price, :content, :category_id, :image)
   end
 
   def set_item
