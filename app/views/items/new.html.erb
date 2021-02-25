@@ -1,3 +1,13 @@
+<% if @item.errors.any? %>
+    <div style="color:red;">
+      <h2><%= @item.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
 <div class="row">
   <div class="col-2">
   </div>
