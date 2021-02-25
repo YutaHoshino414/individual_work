@@ -1,4 +1,9 @@
-<% if @item.errors.any? %>
+
+<div class="row">
+  <div class="col-2">
+  </div>
+  <div class="col-8">
+  <% if @item.errors.any? %>
     <div style="color:red;">
       <h2><%= @item.errors.count %>件のエラーがあります。</h2>
       <ul>
@@ -8,10 +13,6 @@
       </ul>
     </div>
 <% end %>
-<div class="row">
-  <div class="col-2">
-  </div>
-  <div class="col-8">
     <h2>新規投稿</h2><hr>
     <div class="jumbotron">
       <%= form_with(model: @item, local: true) do |form| %>
