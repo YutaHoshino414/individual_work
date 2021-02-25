@@ -1,15 +1,17 @@
 ## コーディネート投稿サービス「フクオタ (仮)」  
 
-<img width="1317" alt="スクリーンショット 2021-02-22 5 28 44" src="https://user-images.githubusercontent.com/72447845/109145614-0bbacc80-77a6-11eb-9ca5-dd7db3453938.png">
-
-
-[Heroku](https://serene-bayou-03832.herokuapp.com/)  
-
 ## 概要
 好きなファッションコーディネートを投稿しよう。 自分のファッションアイテムを投稿し合い、また投稿アイテムを購入することができます。 「フクオタ」はファッション好きである開発者が、 自分の好きなものを通して他者と繋がれるサービスをと考え、開発したアプリケーションです。
 
 ## コンセプト
 ファッションコーディネート投稿に、投稿したアイテムを購入できる決済機能を設ける
+
+<img width="1317" alt="スクリーンショット 2021-02-22 5 28 44" src="https://user-images.githubusercontent.com/72447845/109145614-0bbacc80-77a6-11eb-9ca5-dd7db3453938.png">
+
+
+[Heroku](https://serene-bayou-03832.herokuapp.com/)  
+
+
 
 ## バージョン
 Ruby 2.6.5  
