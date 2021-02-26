@@ -21,7 +21,7 @@
 end
 
 @count = 1
-@id = 5
+@id = 1
 10.times do |n|
   name = "テストアイテム#{@count}"
   # brand = 
