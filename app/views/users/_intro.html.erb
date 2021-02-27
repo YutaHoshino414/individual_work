@@ -16,7 +16,7 @@
        <strong>自己紹介：</strong>
          <div class="card">
            <div class="card-body">
-             <br><br><br><br><br><br><br><br>
+             <%= @user.profile.introduction %><br><br><br><br><br><br><br><br>
            </div>
          </div>
        </div>
@@ -27,23 +27,23 @@
             <tbody>
                <tr>
                  <th>ユーザー名</th>
-                 <td></td>
+                 <td><%= @user.profile.username %></td>
                </tr>
                <tr>
                  <th>氏名</th>
-                 <td></td>
+                 <td><%= @user.profile.last_name %><%= @user.profile.first_name %></td>
                </tr>
                <tr>
                  <th>誕生日</th>
-                 <td></td>
+                 <td><%= @user.profile.birthday %></td>
                </tr>
                <tr>
                  <th>性別</th>
-                 <td></td>
+                 <td><%= @user.profile.sex %></td>
                </tr>
                <tr>
                  <th>身長</th>
-                 <td>cm</td>
+                 <td><%= @user.profile.body_length %></td>
                </tr>
              </tbody>
           </table>

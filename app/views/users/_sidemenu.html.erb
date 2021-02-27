@@ -21,9 +21,9 @@
     <span class="list-group-item">基本情報編集</span>
   <% end %>
   <span class="list-group-item">setting</span>
- 
+  <%= link_to edit_user_path(@user.profile_id) do %>
     <span class="list-group-item">プロフィール編集</span>
- 
+  <% end %>
   <span class="list-group-item">setting</span>
 </div><br><br><br>
-<%= link_to'プロフィール作成', new_profile_path %>
+<%= link_to'プロフィール作成(修正時のみ使用)', new_profile_path %>
