@@ -20,26 +20,26 @@
   @count += 1
 end
 
-@count = 1
-@id = 1
-10.times do |n|
-  name = "テストアイテム#{@count}"
-  # brand = 
-  category_id ="#{@id}"
-  user_id ="#{@id}"
-    Item.create!(
-      name: name,
-      brand:"ノーブランド",
-      status:1,
-      delivery_from:1,
-      price:2000,
-      content:"テスト投稿",
-      category_id: category_id,
-      user_id: user_id
-    )
-  @count += 1
-  @id += 1
-end
+# @count = 1
+# @id = 1
+# 10.times do |n|
+#   name = "テストアイテム#{@count}"
+#   # brand = 
+#   category_id ="#{@id}"
+#   user_id ="#{@id}"
+#     Item.create!(
+#       name: name,
+#       brand:"ノーブランド",
+#       status:1,
+#       delivery_from:1,
+#       price:2000,
+#       content:"テスト投稿",
+#       category_id: category_id,
+#       user_id: user_id
+#     )
+#   @count += 1
+#   @id += 1
+# end
 
 #カテゴリーデータ
 # # 親階層
