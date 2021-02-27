@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:show]
   resources :favorites, only: [:create, :destroy]
-  resources :profiles, only: [ :edit, :update]
+  resources :profiles, only: [:new, :create, :edit, :update]
 end

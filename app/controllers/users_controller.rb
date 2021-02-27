@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @bought_items = Item.all.where(buyer_id: current_user.id)
     @onsell_items = Item.all.where(buyer_id: nil, user_id: @user.id)
+    @profile = Profile.new
   end
 
   def edit
