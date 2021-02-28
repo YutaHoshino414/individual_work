@@ -1,24 +1,24 @@
-@count = 1
-10.times do |n|
-  @username = "test#{@count}"
-  email = "#{@username}@hoge.com"
-  password = "password"
-  @user = User.create!(
-    email: email,
-    password: password,
-    password_confirmation: password,
-  )
+# @count = 1
+# 10.times do |n|
+#   @username = "test#{@count}"
+#   email = "#{@username}@hoge.com"
+#   password = "password"
+#   @user = User.create!(
+#     email: email,
+#     password: password,
+#     password_confirmation: password,
+#   )
 
-  10.times do |n|
-  username = "#{@username}"
-   user_id = @user.id
-     Profile.create!(
-       username: username,
-       user_id: user_id
-     )
-  end
-  @count += 1
-end
+#   10.times do |n|
+#   username = "#{@username}"
+#    user_id = @user.id
+#      Profile.create!(
+#        username: username,
+#        user_id: user_id
+#      )
+#   end
+#   @count += 1
+# end
 
 # @count = 1
 # @id = 1
