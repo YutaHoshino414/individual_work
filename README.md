@@ -9,7 +9,7 @@
 <img width="1317" alt="スクリーンショット 2021-02-22 5 28 44" src="https://user-images.githubusercontent.com/72447845/109145614-0bbacc80-77a6-11eb-9ca5-dd7db3453938.png">
 
 
-[Heroku(現在、アプリにてエラー発生中の為、修復中)](https://serene-bayou-03832.herokuapp.com/)  
+[Heroku](https://serene-bayou-03832.herokuapp.com/)  
 
 
 
