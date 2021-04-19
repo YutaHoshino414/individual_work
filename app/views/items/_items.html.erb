@@ -12,18 +12,18 @@
         <% end %>
       <% end %>
 
-       <div>
-      <div class="card-footer border-below">
-        <% if item.buyer_id.present? %>
-          <fieldset disabled><button class="btn btn-danger btn-block" style="text-align:center">SOLD OUT</button> </fieldset> 
-        <% else %> 
-          <small><p><%= item.name %></p></small>
-        <% end %>  
-          <i class="far fa-clock"></i>
-          <small><%= item.created_at.strftime('%Y/%m/%d') %>:_</small><%= item.user.profile.username %><br>
-          <i class="fas fa-heart unlike-btn"><small><%= item.favorites.count %></small></i>
-      </div>
-      </div>
+       
+        <div class="card-footer border-below align-items-end">
+          <% if item.buyer_id.present? %>
+            <fieldset disabled><button class="btn btn-danger btn-block" style="text-align:center">SOLD OUT</button> </fieldset> 
+          <% else %> 
+            <small><p><%= item.name %></p></small>
+          <% end %>  
+            <i class="far fa-clock"></i>
+            <small><%= item.created_at.strftime('%Y/%m/%d') %>:_</small><%= item.user.profile.username %><br>
+            <i class="fas fa-heart unlike-btn"><small><%= item.favorites.count %></small></i>
+        </div>
+      
     </div>
   </div>
   <% end %>
