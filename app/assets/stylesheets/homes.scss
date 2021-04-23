@@ -1,52 +1,219 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.full {
-  // width: 1100px;
-  margin:0;
-  padding:0;
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+header
+{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  // filter:saturate(0);
+  padding: 40px 100px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo
+{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.toggle
+{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+.toggle.active
+{
+  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+  cursor: pointer;
+}
+.showcase
+{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  transition: 0.5s;
+  z-index: 2;
+}
+.showcase.active
+{
+  left: 250px;
 }
 
-// .top_page {
-//   // display: none;
-//   position: absolute;
-//   top: 60%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   border: 1px solid #979797;
-//   background-color:#fdfdfda6;
-//   // transition: background 0.3s;
-//   cursor: pointer;
-// }
+.showcase video
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.overlay
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: #f48c034f; */
+  mix-blend-mode: overlay;
+}
+.text
+{
+  display: none;
+  position: relative;
+  z-index: 10;
+}
 
-// .top_page p{
-//   font-size: 65px;
-//   color:rgb(90, 90, 90);
-//   font-family: serif;
-//   padding:10px;
-// }
+.text h2
+{
+  font-size: 5em;
+  font-weight: 800;
+  color: #f47703;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text h3
+{
+  font-size: 4em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.text p
+{
+  font-size: 1.1em;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+.text a
+{
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.text a:hover
+{
+  text-decoration: none;
+  letter-spacing: 6px;
+  background: #f47703;
+  color:#fff;
+}
+.social
+{
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social li
+{
+  list-style: none;
+}
+.social li a
+{
+  display: inline-block;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+.menu
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul
+{
+  position: relative;
+}
+.menu ul li
+{
+  list-style: none;
+  margin-bottom: 20px;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  font-size: 24px;
+  color: #111;
+}
+.menu ul li a:hover
+{
+  color: #03a9f4; 
+}
 
-// .top_page> :hover{
-//    background-color:#fdfdfdc0;
-//   /* filter:saturate(0); */
-//   background-position:0 0;
-// }
+@media (max-width: 991px)
+{
+  .showcase,
+  .showcase header
+  {
+    padding: 40px;
+  }
+  .text h2
+  {
+    font-size: 3em;
+  }
+  .text h3
+  {
+    font-size: 2em;
+  }
+}
 
-// .top_title{
-//   padding: 50px;
-//   width: 500px;
-// }
-// video用
 .line{
   width: 0%;
   height: 1px;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   position: fixed;
   top: 50%;
-  z-index: 2;
+  z-index: 200;
 }
 
 .up{
@@ -54,7 +221,7 @@
   height: 50%;
   background-color: #000;
   position:fixed;
-  z-index: 1;
+  z-index: 100;
 }
 
 .down{
@@ -63,54 +230,5 @@
   background-color: #000;
   position:fixed;
   bottom:0;
-  z-index: 1;
-}
-
-.video-content{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width:100vw;
-  min-height: 100vh;
-  filter:saturate(0);
-}
-
-.top_title {
-  display:none;
-  position:absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  
-  border: 1px solid #fff;
-  padding: 50px;
-  font-family: serif;
-}
-
-.top_title p{
-  font-size: 80px;
-  font-family: serif;
-  color: #fff;
-  // text-shadow: 5px 0 5px rgb(58, 57, 57);
-}
-
-.top_box >:hover{
-  background-color:#fdfdfd86;
-}
-
-.top_box h1{
-  color:rgb(247, 155, 18);
-  font-size: 80px;
-  // text-shadow: 1px 0 5px rgb(17, 17, 17);
-}
-
-.fa-bars{
-  color:#fff;
-  font-size: 50px;
-  // position: absolute;
-  // top: 10%;
-  // left:10%;
-  cursor: pointer;
+  z-index: 100;
 }
