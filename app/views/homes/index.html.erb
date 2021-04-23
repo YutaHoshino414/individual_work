@@ -32,24 +32,33 @@
       </div>
 
   </section> 
-  <div class="menu">
-    <ul>
-      <li>
-      <%= link_to new_user_session_path do %>
-        <span>ログイン</span>
-      <% end %>
-      </li>
-      <li>
-      <%= link_to new_user_registration_path do %>
-        <span>アカウント登録</span>
+  <div class="side">
+    <div class="menu">
+      <ul>
+        <li>
+        <%= link_to new_user_session_path do %>
+          <span>ログイン</span>
         <% end %>
-      </li>
-      <li>Home</li>
-      <li>News</li>
-      <li>Contact</li>
-    </ul>
+        </li>
+        <li>
+        <%= link_to new_user_registration_path do %>
+          <span>アカウント登録</span>
+          <% end %>
+        </li><hr>
+        <li>Home</li>
+        <li>News</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+      <div class="card border-0">
+       <div class="card-body">
+       <p>About 開発者</p>
+        <div class="image_author"> 
+          <a href="https://yutahoshino414.github.io/" target="_blank" rel="noopener noreferrer" class="fab fa-github "></a>
+        </div>
+        </div>
+      </div>
   </div>
-  
    <script>
    $(".line").animate({"width":"100%"},1500,function(){
      $(".line").css("right",0)
