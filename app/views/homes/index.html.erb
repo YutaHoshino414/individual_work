@@ -33,8 +33,14 @@
 
   </section> 
   <div class="side">
+    <%= link_to items_path, class:'icon-front' do %>
+      <%= image_tag 'Page-1.png', class:'icon-front' %>
+    <% end %> 
     <div class="menu">
       <ul>
+        <li>Home</li>
+        <li>News</li>
+        <li>Contact</li>
         <li>
         <%= link_to new_user_session_path do %>
           <span>ログイン</span>
@@ -45,9 +51,7 @@
           <span>アカウント登録</span>
           <% end %>
         </li><hr>
-        <li>Home</li>
-        <li>News</li>
-        <li>Contact</li>
+        
       </ul>
     </div>
       <div class="card border-0">
