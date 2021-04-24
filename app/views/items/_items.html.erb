@@ -1,17 +1,16 @@
 <div class="row">
   <% @results.each do |item| %>
-  <div class="col-sm-4 mb-5">
-    <div class="card shadow h-100 scale" id="<%= item.id %>">
+  <div class="col-sm-4 mb-4">
+    <div class="shadow h-100 scale" id="<%= item.id %>">
       <% if item.image.attached? %>
         <%= link_to item_path(item.id) do%>
         <%= image_tag item.image.variant(resize:'250x300') %>
         <% end %>
       <% else %>
         <%= link_to item_path(item.id) do%>
-          <%= image_tag 'item_default.png' %>
+          <img src="http://placeholder.pics/svg/250x300/DEDEDE/66625C-DEDFE0/No%20image" />
         <% end %>
       <% end %>
-
        
         <div class="card-footer border-below align-items-end">
           <% if item.buyer_id.present? %>
@@ -23,12 +22,12 @@
             <small><%= item.created_at.strftime('%Y/%m/%d') %>:_</small><%= item.user.profile.username %><br>
             <i class="fas fa-heart unlike-btn"><small><%= item.favorites.count %></small></i>
         </div>
-      
     </div>
   </div>
   <% end %>
 </div>
 
+<br><br><h2 class="border-bottom" style="text-align:center">ダミー投稿</h2><br>
 <div class="row">
   <div class="col-sm-4 mb-5">
     <div class="card shadow h-100 scale">
@@ -54,7 +53,7 @@
   </div>
   <div class="col-sm-4 mb-5">
     <div class="card shadow h-100 scale">
-    <img src="http://placeimg.com/250/300/tech" />
+    <img src="https://unsplash.it/250/300" />
         <div class="card-footer border-below align-items-end">
          
             <i class="far fa-clock"></i>
@@ -68,7 +67,7 @@
 <div class="row">
   <div class="col-sm-4 mb-5">
     <div class="card shadow h-100 scale">
-    <img src="https://picsum.photos/id/26/250/300" />
+    <img src="https://picsum.photos/id/669/250/300" />
         <div class="card-footer border-below align-items-end">
          
             <i class="far fa-clock"></i>
@@ -90,7 +89,7 @@
   </div>
   <div class="col-sm-4 mb-5">
     <div class="card shadow h-100 scale">
-    <img src="https://picsum.photos/id/157/250/300" />
+    <img src="https://picsum.photos/id/325/250/300" />
         <div class="card-footer border-below align-items-end">
          
             <i class="far fa-clock"></i>
@@ -99,4 +98,54 @@
         </div>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4 mb-5">
+    <div class="card shadow h-100 scale">
+    <img src="https://picsum.photos/id/604/250/300" />
+        <div class="card-footer border-below align-items-end">
+         
+            <i class="far fa-clock"></i>
+            <small>9999:_</small>ランダム<br>
+            <i class="fas fa-heart unlike-btn"><small></small></i>
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-5">
+    <div class="card shadow h-100 scale">
+    <img src="https://picsum.photos/id/822/250/300" />
+        <div class="card-footer border-below align-items-end">
+         
+            <i class="far fa-clock"></i>
+            <small>9999:_</small>ランダム<br>
+            <i class="fas fa-heart unlike-btn"><small></small></i>
+        </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-5">
+    <div class="card shadow h-100 scale">
+    <img src="https://picsum.photos/id/64/250/300" />
+        <div class="card-footer border-below align-items-end">
+         
+            <i class="far fa-clock"></i>
+            <small>9999:_</small>ランダム<br>
+            <i class="fas fa-heart unlike-btn"><small></small></i>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4 mb-5">
+    <div class="card shadow h-100 scale">
+    <img src="https://picsum.photos/id/823/250/300" />
+        <div class="card-footer border-below align-items-end">
+         
+            <i class="far fa-clock"></i>
+            <small>9999:_</small>ランダム<br>
+            <i class="fas fa-heart unlike-btn"><small></small></i>
+        </div>
+    </div>
+  </div>
+  
 </div>
