@@ -233,7 +233,11 @@ header .logo
   z-index: 100;
 }
 
-.image_author{
+.image_author {
+  align-items: center;
+}
+
+.image_author a{
   // position: absolute;
   // top:70%;
   // left:5%;
@@ -242,7 +246,8 @@ header .logo
   width: 50px;
   height: 50px;
   text-align: center;
-  padding:5px;
+  padding-top:10px;
+  align-items: center;
 }
 
 .image_author a:hover {
@@ -252,8 +257,12 @@ header .logo
 
 .fa-github {
   color:#fff;
-  font-size:30px;
-  margin-top: 4px;
+  font-size:28px;
+}
+
+.fa-globe {
+  color:#fff;
+  font-size:28px;
 }
 
 .side{
