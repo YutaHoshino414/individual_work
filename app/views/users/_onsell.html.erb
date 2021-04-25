@@ -1,0 +1,22 @@
+
+<h3 class="mt-5">投稿中のアイテム<i class="fas fa-tshirt"></i></h3><hr>
+ <div class="row ">
+   <% @onsell_items.each do |onsell| %>
+    <div class="card w-50 mb-4 shadow border-secondary scale" >
+      <div class="row" style="margin:0;">
+        <%= link_to item_path(onsell) do %>
+          <%= image_tag 'item_default.png', class:"record" %>
+        <% end %>
+        <div class="col">
+          <small><%= onsell.name %></small><br>
+          <small><%= onsell.brand %></small><br>
+          <small><%= onsell.category.name %></small><br>
+          <strong><%= onsell.price %>円</strong><br>
+          <i class="fas fa-heart unlike-btn"><small><%= onsell.favorites.count %></small></i>
+        </div>
+      </div>
+     </div>
+    <% end %>
+  </div>
+  </div>
+</div>

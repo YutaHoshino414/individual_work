@@ -1,0 +1,16 @@
+<h4 class="mt-5">フォロー中<i class="fas fa-users"></i></h4><hr>
+<div class="row">
+  <% @user.following.each do |user| %>
+  <div class="card w-50 mb-2">
+      <div class="card-body border-bot">
+        <%= link_to user_path(user) do %>
+          <%= user.profile.username %>
+        <% end %>
+        <span>｜<i class="fas fa-users"></i>
+          <%= user.followers.count %></span>|
+          <i class="fas fa-tshirt"></i>
+          <%= user.items.count %>
+      </div>
+   </div>
+   <% end %>
+</div>

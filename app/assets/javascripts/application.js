@@ -17,3 +17,14 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+$(document).on('turbolinks:load', function(){
+  $('.tab li').on('click', function(){
+    $('.tab li').removeClass('select');
+    $(this).addClass('select');
+    $('.content li').addClass('hide');
+    let selecttab = $('.tab li').index($(this));
+    $('.content li').eq(selecttab).removeClass('hide');
+  });
+});

@@ -7,28 +7,22 @@
   
   <div class="col-9 mt-4">
     <%= render 'users/intro' %>
- 
-    <div class="jumbotron">
-    <h3>投稿中のアイテム<i class="fas fa-tshirt"></i></h3><hr>
-     <div class="row ">
-       <% @onsell_items.each do |onsell| %>
-        <div class="card w-50 mb-4 shadow border-secondary scale" >
-          <div class="row" style="margin:0;">
-            <%= link_to item_path(onsell) do %>
-              <%= image_tag 'item_default.png', class:"record" %>
-            <% end %>
-            <div class="col">
-              <small><%= onsell.name %></small><br>
-              <small><%= onsell.brand %></small><br>
-              <small><%= onsell.category.name %></small><br>
-              <strong><%= onsell.price %>円</strong><br>
-              <i class="fas fa-heart unlike-btn"><small><%= onsell.favorites.count %></small></i>
-            </div>
-          </div>
-         </div>
-        <% end %>
-      </div>
-      </div>
-   </div>
+    <div >
+      <ul class="tab">
+        <li class="select">フォロー一覧</li>
+        <li>投稿アイテム一覧</li>
+      </ul>
+      <ul class="content">
+        <li class="mb-5">
+        <%= render partial: 'users/following', locals: {user: @user } %>
+        </li>
+        <li class="hide">
+        <%= render partial: 'users/onsell', locals: {onsell: @onsell_items } %>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</div> 
+   
+ 
+  

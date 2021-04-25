@@ -42,3 +42,102 @@
   font-size:30px;
   color: rgb(107, 107, 107);
 }
+
+
+//切り替えタブ
+ul li{
+	float:left;
+	margin-right:1px;
+	list-style-type:none;
+}
+
+.unuse_tab  a{
+	
+	font-weight:bold;
+	color:#FFF;
+	text-decoration:none;
+	display:block;
+	width:100px;
+	padding:15px 20px;
+	background:#C15757;
+}
+
+ul li a:hover{
+	background:#D26161;
+	color:#FFF;
+}
+
+ul li a.current{
+	background:#F5F4F2;
+	color:#C15757;
+}
+
+#contents{
+	clear:both;
+	// margin-bottom:150px;
+}
+
+#contents {
+  padding:30px 20px;
+	background:#F5F4F2;
+}
+
+#contents p{
+	margin-top:20px;
+	line-height:2em;
+	color:#C15757;
+}
+
+#contents strong{
+	font-size:4em;
+	font-weight:bold;
+	color:#D6AF62;
+}
+
+ // タブ人の
+
+ .tab {
+  list-style:none;
+  overflow:hidden;
+  margin: 0;
+  padding-left: 0;
+}
+
+.tab li {
+  background:rgb(233, 176, 176);
+  padding:15px 35px;
+  float:left;
+  margin-right:1px;
+  border-radius: 10px 10px 0 0;
+}
+
+.tab li.select {
+  background:#eee;
+}
+
+.content {
+  list-style:none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.content li{
+  background:#eee;
+  padding:20px;
+  border-radius: 0px 10px 10px 10px;
+}
+
+.hide {
+  display:none;
+}
+
+.user-scroll-row{
+  height: 600px;
+  margin-bottom: -15px;
+  padding: 5px 10px;
+  overflow: scroll;
+  word-break: break-all;
+  background-color: #eee;
+  border-radius: 40px;
+  border: 10px solid #eee;
+}
