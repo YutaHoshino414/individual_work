@@ -27,4 +27,4 @@ $(document).on('turbolinks:load', function(){
     let selecttab = $('.tab li').index($(this));
     $('.content li').eq(selecttab).removeClass('hide');
   });
-});
+})
