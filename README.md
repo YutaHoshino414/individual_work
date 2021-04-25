@@ -11,8 +11,7 @@
 ## コンセプト
 ファッションコーディネート投稿に、投稿したアイテムを購入できる決済機能を設ける
 
-<img width="1317" alt="スクリーンショット 2021-02-22 5 28 44" src="https://user-images.githubusercontent.com/72447845/109145614-0bbacc80-77a6-11eb-9ca5-dd7db3453938.png">
-
+<img width="1310" alt="スクリーンショット 2021-04-25 0 16 41" src="https://user-images.githubusercontent.com/72447845/115963716-98da9180-a55b-11eb-8fd7-1393eef3f1ca.png">
 
  
 
