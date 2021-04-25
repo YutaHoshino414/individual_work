@@ -1,19 +1,17 @@
 <div>
-<div class="row">
-  <div class="col-3">
-    <%= render 'items/searchbox' %>
-    <%= render 'items/ranking' %>
-    <%= render 'categories/menu2' %>
-    <%= render 'items/new' %> 
-  </div>
-
-  <div class="col-9">  
+  <div class="row">
     
-    <br><br><h2 class="border-bottom" style="text-align:center">投稿一覧</h2><br>
-    <div class="index">
-      <%= render 'items', items: @results %>
+    <div class="col-9">  
+      <%= render 'items/searchbox' %> 
+    </div>
+    <div class="col-3">    
+      <%= render 'items/ranking' %>
     </div>
   </div>
+<h2 class="border-bottom" style="text-align:center">投稿一覧</h2><br>
+      <div class="index">
+        <%= render 'items', items: @results %>
+      </div><br><br><br><br>
+  <%= paginate @results %>
 </div>
-<br><br><br><br><%= paginate @results %>
-</div>
+<%= render 'items/new' %> 

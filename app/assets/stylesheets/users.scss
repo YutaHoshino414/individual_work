@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .image_default{
-  // position: fixed;
+  position: absolute;
+  left: 340px;
+  top: -80px;
   padding: 32px;
   border-radius: 50%;
   background-color:#aab1b9;

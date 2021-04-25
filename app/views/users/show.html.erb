@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-5">
   <div class="col-3">
     <% if @user.id == current_user.id %>
       <%= render 'users/sidemenu' %>
@@ -7,24 +7,7 @@
   
   <div class="col-9"><br>
     <%= render 'users/intro' %>
-    <div class="jumbotron">
-     <h3>フォロー中のユーザー<i class="fas fa-users"></i></h3><hr>
-     <div class="row">
-       <% @user.following.each do |user| %>
-       <div class="card w-50 mb-2">
-           <div class="card-body border-bot">
-             <%= link_to user_path(user) do %>
-               <%= user.profile.username %>
-             <% end %>
-             <span>｜<i class="fas fa-users"></i>
-               <%= user.followers.count %></span>|
-               <i class="fas fa-tshirt"></i>
-               <%= user.items.count %>
-           </div>
-        </div>
-        <% end %>
-     </div>
-    </div>
+ 
     <div class="jumbotron">
     <h3>投稿中のアイテム<i class="fas fa-tshirt"></i></h3><hr>
      <div class="row ">

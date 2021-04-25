@@ -2,14 +2,14 @@
 <div class="row">
   <% @category.items.each do |item| %>
   <div class="col-sm-3 mb-5">
-    <div class="card shadow h-100 scale" id="<%= item.id %>">
+    <div class=" shadow h-100 scale" id="<%= item.id %>">
         <%= link_to item_path(item.id) do%>
-          <%= image_tag 'item_default.png' %>
+          <img src="http://placeholder.pics/svg/250x300/DEDEDE/66625C-DEDFE0/No%20image" />
         <% end %>
       <div class="card-footer border-below">
         <small><p><%= item.name %></p></small>
         <i class="far fa-clock"></i>
-        <small><%= item.created_at.strftime('%Y/%m/%d') %>:_</small><%= item.user.profile.username %><br>
+        <small><%= item.created_at.strftime('%Y/%m/%d') %>:_<%= item.user.profile.username %></small><br>
         <i class="fas fa-heart unlike-btn"><small><%= item.favorites.count %></small></i>
       </div>
     </div>

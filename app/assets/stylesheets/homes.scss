@@ -233,8 +233,11 @@ header .logo
   z-index: 100;
 }
 
-.image_author {
-  align-items: center;
+.aboutzone {
+  bottom: 0;
+  width: 250px;
+  position: fixed;
+  background-color: #8b8b8b;
 }
 
 .image_author a{
@@ -242,7 +245,7 @@ header .logo
   // top:70%;
   // left:5%;
   border-radius: 100%;
-  background-color:#3b3b3b;
+  background-color:#424242;
   width: 50px;
   height: 50px;
   text-align: center;

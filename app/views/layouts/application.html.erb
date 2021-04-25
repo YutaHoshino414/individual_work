@@ -14,13 +14,13 @@
     <%= render 'layouts/header' %>
     
     <div class="container">
-    <div class="" >
-      <% flash.each do |key, value| %>
-        <p><%= content_tag(:div, value, class: "#{key}") %></p>
-      <% end %>
-        
-    </div><br><br>
-    <%= yield %>
+        <div class="" >
+          <% flash.each do |key, value| %>
+            <p><%= content_tag(:div, value, class: "#{key}") %></p>
+          <% end %>
+        </div><br>
+
+      <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
   </body>

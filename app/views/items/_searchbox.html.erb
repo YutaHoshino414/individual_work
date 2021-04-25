@@ -1,27 +1,28 @@
-<br>
+
 <div class="card">
   <div class="card-body search_box">
-    <h5><strong>商品検索</strong></h5>
+    <h5><strong>商品検索</strong></h5><hr>
       <%= search_form_for @q do |f| %>
-      <div> 
-        <div>
-          <%= f.search_field :name_cont, placeholder: "アイテム名..",class: "form-control" %><br>
-          
-          <strong><%= f.label :price %></strong>
-          <div class="">
-            <small><%= f.number_field :price_gteq ,class: "form-control" %>円以上〜</small>
-            <small><%= f.number_field :price_lt ,class: "form-control" %>円未満</small>
+       
+        <div class="row"> 
+          <div class="col-5">
+            <strong><%= f.label :name %></strong>
+            <%= f.search_field :name_cont, placeholder: "アイテム名..",class: "form-control" %><br>
+          </div>
+          <div class="col-4">
+              <strong><%= f.label :price %></strong>
+              <small><%= f.number_field :price_gteq ,class: "form-control" %>円以上〜</small>
+              <small><%= f.number_field :price_lt ,class: "form-control" %>円未満</small>
+          </div>
+          <div class="col-3">
+            <strong><%= f.label :status %></strong>
+            <%= f.select :status, Item.statuses.keys.to_a,{ include_blank: '選択してください'},class: "form-control" %>
           </div>
         </div><br>
-        <div class="">
-          <strong><%= f.label :status %></strong>
-          <%= f.select :status, Item.statuses.keys.to_a,{ include_blank: '選択してください'},class: "form-control" %>
-        </div>
-    
-      </div><br><hr>
-        <%= f.button :type => "submit", class: 'btn btn-dark btn-block' do %>
-        <i class="fas fa-search">検索</i>
+        <%= f.button :type => "submit", class: 'btn btn-dark' do %>
+          <i class="fas fa-search">検索</i>
         <% end %>
+        <button class="btn btn-outline-danger">クリア</button>
       <% end %>
   </div>
 </div><br><br>
