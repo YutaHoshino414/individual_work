@@ -28,3 +28,17 @@ $(document).on('turbolinks:load', function(){
     $('.content li').eq(selecttab).removeClass('hide');
   });
 })
+
+$(function(){
+  $("a").click(function(e){
+    e.preventDefault(); 
+    url = $(this).attr('href');
+    setTimeout(function(){
+      window.location = url;
+      }, 500);
+    $(".full").animate({"width":"100%"},1000);
+    $(window).on('load',function(){
+      $(".full").fadeOut();
+     });
+  });
+});
